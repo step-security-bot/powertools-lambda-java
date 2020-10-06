@@ -5,6 +5,7 @@
 <url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/core/logging/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/core/metrics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/core/tracing/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/utilities/batch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/utilities/parameters/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://awslabs.github.io/aws-lambda-powertools-java/aws-lambda-powertools-java/utilities/sqs_large_message_handling/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
