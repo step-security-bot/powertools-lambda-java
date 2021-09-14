@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -392,6 +392,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#iam-permissions" class="md-nav__link">
+    IAM Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#processing-messages-from-sqs" class="md-nav__link">
     Processing messages from SQS
   </a>
@@ -435,6 +442,13 @@
         <li class="md-nav__item">
   <a href="#suppressing-exceptions" class="md-nav__link">
     Suppressing exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-non-retryable-messages-to-a-dead-letter-queue" class="md-nav__link">
+    Move non retryable messages to a dead letter queue
   </a>
   
 </li>
@@ -496,6 +510,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#iam-permissions" class="md-nav__link">
+    IAM Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#processing-messages-from-sqs" class="md-nav__link">
     Processing messages from SQS
   </a>
@@ -539,6 +560,13 @@
         <li class="md-nav__item">
   <a href="#suppressing-exceptions" class="md-nav__link">
     Suppressing exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-non-retryable-messages-to-a-dead-letter-queue" class="md-nav__link">
+    Move non retryable messages to a dead letter queue
   </a>
   
 </li>
@@ -624,7 +652,7 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 <span class="hll">    <span class="nt">&lt;dependency&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;artifactId&gt;</span>powertools-sqs<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.7.2<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.7.3<span class="nt">&lt;/version&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;/dependency&gt;</span>
 </span>    ...
 <span class="nt">&lt;/dependencies&gt;</span>
@@ -668,15 +696,18 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="n">dependencies</span> <span class="o">{</span>
     <span class="o">...</span>
-    <span class="n">implementation</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.2&#39;</span>
-    <span class="n">aspectpath</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.2&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.3&#39;</span>
+    <span class="n">aspectpath</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.3&#39;</span>
 <span class="o">}</span>
 </code></pre></div>
 </td></tr></table>
 </div>
 </div>
-<p><strong>IAM Permissions</strong></p>
-<p>This utility requires additional permissions to work as expected. Lambda functions using this utility require the <code>sqs:GetQueueUrl</code> and <code>sqs:DeleteMessageBatch</code> permission.</p>
+<h2 id="iam-permissions">IAM Permissions<a class="headerlink" href="#iam-permissions" title="Permanent link">&para;</a></h2>
+<p>This utility requires additional permissions to work as expected. Lambda functions using this utility require the <code>sqs:DeleteMessageBatch</code> permission.</p>
+<p>If you are also using <a href="#move-non-retryable-messages-to-a-dead-letter-queue">nonRetryableExceptions</a> attribute, utility will need additional permission of <code>sqs:GetQueueAttributes</code> on source SQS. 
+It also needs <code>sqs:SendMessage</code> and <code>sqs:SendMessageBatch</code> on configured dead letter queue.  </p>
+<p>Refer <a href="https://github.com/aws-samples/aws-lambda-powertools-examples/blob/main/java/SqsBatchProcessing/template.yaml#L67">example project</a> for policy details example.</p>
 <h2 id="processing-messages-from-sqs">Processing messages from SQS<a class="headerlink" href="#processing-messages-from-sqs" title="Permanent link">&para;</a></h2>
 <p>You can use either <strong><a href="#sqsbatch-annotation">SqsBatch annotation</a></strong>, or <strong><a href="#sqsutils-utility-api">SqsUtils Utility API</a></strong> as a fluent API.</p>
 <p>Both have nearly the same behaviour when it comes to processing messages from the batch:</p>
@@ -684,7 +715,8 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 <li><strong>Entire batch has been successfully processed</strong>, where your Lambda handler returned successfully, we will let SQS delete the batch to optimize your cost</li>
 <li><strong>Entire Batch has been partially processed successfully</strong>, where exceptions were raised within your <code>SqsMessageHandler</code> interface implementation, we will:<ul>
 <li><strong>1)</strong> Delete successfully processed messages from the queue by directly calling <code>sqs:DeleteMessageBatch</code></li>
-<li><strong>2)</strong> Raise <code>SQSBatchProcessingException</code> to ensure failed messages return to your SQS queue</li>
+<li><strong>2)</strong> if, non retryable exceptions occur, messages resulting in configured exceptions during processing will be immediately moved to the dead letter queue associated to the source SQS queue or deleted from the source SQS queue if <code>deleteNonRetryableMessageFromQueue</code> is set to <code>true</code>.</li>
+<li><strong>3)</strong> Raise <code>SQSBatchProcessingException</code> to ensure failed messages return to your SQS queue</li>
 </ul>
 </li>
 </ul>
@@ -698,14 +730,15 @@ utility will have access to both successful and failed messaged along with failu
 <p>When using this annotation, you need provide a class implementation of <code>SqsMessageHandler</code> that will process individual messages from the batch - It should raise an exception if it is unable to process the record.</p>
 <p>All records in the batch will be passed to this handler for processing, even if exceptions are thrown - Here's the behaviour after completing the batch:</p>
 <ul>
-<li><strong>Any successfully processed messages</strong>, we will delete them from the queue via <code>sqs:DeleteMessageBatch</code></li>
-<li><strong>Any unprocessed messages detected</strong>, we will raise <code>SQSBatchProcessingException</code> to ensure failed messages return to your SQS queue</li>
+<li><strong>Any successfully processed messages</strong>, we will delete them from the queue via <code>sqs:DeleteMessageBatch</code>.</li>
+<li><strong>if, nonRetryableExceptions attribute is used</strong>, messages resulting in configured exceptions during processing will be immediately moved to the dead letter queue associated to the source SQS queue or deleted from the source SQS queue if <code>deleteNonRetryableMessageFromQueue</code> is set to <code>true</code>.</li>
+<li><strong>Any unprocessed messages detected</strong>, we will raise <code>SQSBatchProcessingException</code> to ensure failed messages return to your SQS queue.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You will not have access to the <strong>processed messages</strong> within the Lambda Handler - all processing logic will and should be performed by the implemented <code class="highlight"><span class="n">SqsMessageHandler</span><span class="err">#</span><span class="n">process</span><span class="p">()</span></code> function.</p>
 </div>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">AppSqsEvent.java</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">AppSqsEvent.java</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -723,7 +756,15 @@ utility will have access to both successful and failed messaged along with failu
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsBatch</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsMessageHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsUtils</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="nd">@Override</span>
 <span class="hll">    <span class="nd">@SqsBatch</span><span class="p">(</span><span class="n">SampleMessageHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
 </span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
@@ -737,6 +778,63 @@ utility will have access to both successful and failed messaged along with failu
             <span class="c1">// This will be called for each individual message from a batch</span>
             <span class="c1">// It should raise an exception if the message was not processed successfully</span>
             <span class="n">String</span> <span class="n">returnVal</span> <span class="o">=</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span>
+            <span class="k">return</span> <span class="n">returnVal</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">AppSqsEventWithNonRetryableExceptions.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsBatch</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsMessageHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsUtils</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+<span class="hll">    <span class="nd">@SqsBatch</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">SampleMessageHandler</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">nonRetryableExceptions</span> <span class="o">=</span> <span class="p">{</span><span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">})</span>
+</span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;{\&quot;statusCode\&quot;: 200}&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleMessageHandler</span> <span class="kd">implements</span> <span class="n">SqsMessageHandler</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="p">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">process</span><span class="p">(</span><span class="n">SQSMessage</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This will be called for each individual message from a batch</span>
+            <span class="c1">// It should raise an exception if the message was not processed successfully</span>
+            <span class="n">String</span> <span class="n">returnVal</span> <span class="o">=</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="cm">/**Business validation failure**/</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">                <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Failed business validation. No point of retrying. Move me to DLQ.&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">getMessageId</span><span class="p">());</span>
+</span>            <span class="p">}</span>
+
             <span class="k">return</span> <span class="n">returnVal</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -908,6 +1006,135 @@ from your <strong><code class="highlight"><span class="n">SqsMessageHandler</spa
 </td></tr></table>
 </div>
 </div>
+<h2 id="move-non-retryable-messages-to-a-dead-letter-queue">Move non retryable messages to a dead letter queue<a class="headerlink" href="#move-non-retryable-messages-to-a-dead-letter-queue" title="Permanent link">&para;</a></h2>
+<p>If you want certain exceptions to be treated as permanent failures during batch processing, i.e. exceptions where the result of retrying will
+always be a failure and want these can be immediately moved to the dead letter queue associated to the source SQS queue, you can use <code>SqsBatch#nonRetryableExceptions()</code> 
+to configure such exceptions. </p>
+<p>If you want such messages to be deleted instead, set <code>SqsBatch#deleteNonRetryableMessageFromQueue()</code> to <code>true</code>. By default, its value is <code>false</code>.</p>
+<p>Same capability is also provided by <a href="#sqsutils-utility-api">SqsUtils Utility API</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Make sure the lambda function has required permissions needed by utility. Refer <a href="#iam-permissions">this section</a>.</p>
+</div>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">SqsBatch annotation</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsBatch</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsMessageHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsUtils</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+<span class="hll">    <span class="nd">@SqsBatch</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">SampleMessageHandler</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">nonRetryableExceptions</span> <span class="o">=</span> <span class="p">{</span><span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">})</span>
+</span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;{\&quot;statusCode\&quot;: 200}&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleMessageHandler</span> <span class="kd">implements</span> <span class="n">SqsMessageHandler</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="p">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">process</span><span class="p">(</span><span class="n">SQSMessage</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This will be called for each individual message from a batch</span>
+            <span class="c1">// It should raise an exception if the message was not processed successfully</span>
+            <span class="n">String</span> <span class="n">returnVal</span> <span class="o">=</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="cm">/**Business validation failure**/</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">                <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Failed business validation. No point of retrying. Move me to DLQ.&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">getMessageId</span><span class="p">());</span>
+</span>            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">returnVal</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">SqsBatch API</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsBatch</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsMessageHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsUtils</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="hll">        <span class="n">SqsUtils</span><span class="p">.</span><span class="na">batchProcessor</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">BatchProcessor</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</span>
+        <span class="k">return</span> <span class="s">&quot;{\&quot;statusCode\&quot;: 200}&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleMessageHandler</span> <span class="kd">implements</span> <span class="n">SqsMessageHandler</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="p">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">process</span><span class="p">(</span><span class="n">SQSMessage</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This will be called for each individual message from a batch</span>
+            <span class="c1">// It should raise an exception if the message was not processed successfully</span>
+            <span class="n">String</span> <span class="n">returnVal</span> <span class="o">=</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="cm">/**Business validation failure**/</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">                <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Failed business validation. No point of retrying. Move me to DLQ.&quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">.</span><span class="na">getMessageId</span><span class="p">());</span>
+</span>            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">returnVal</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
                 
                   
                     
@@ -916,7 +1143,7 @@ from your <strong><code class="highlight"><span class="n">SqsMessageHandler</spa
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-08-03
+      Last update: 2021-09-14
     
   </small>
 </div>
@@ -995,10 +1222,10 @@ from your <strong><code class="highlight"><span class="n">SqsMessageHandler</spa
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
