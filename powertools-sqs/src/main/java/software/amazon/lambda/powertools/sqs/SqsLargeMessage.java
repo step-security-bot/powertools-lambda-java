@@ -5,6 +5,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import static software.amazon.lambda.powertools.sqs.MessageExceptionHandler.NoOpExceptionHandler;
+
 /**
  * {@code SqsLargeMessage} is used to signal that the annotated method
  * should be extended to handle large SQS messages which have been offloaded
@@ -65,4 +67,6 @@ import java.lang.annotation.Target;
 public @interface SqsLargeMessage {
 
     boolean deletePayloads() default true;
+
+    Class<? extends MessageExceptionHandler> failureHandler() default NoOpExceptionHandler.class;
 }

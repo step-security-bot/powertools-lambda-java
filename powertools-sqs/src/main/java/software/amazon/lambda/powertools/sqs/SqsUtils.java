@@ -44,6 +44,8 @@ public final class SqsUtils {
     private static S3Client s3Client;
 
     private SqsUtils() {
+        S3Client.builder()
+                .httpClient()
     }
 
     /**
