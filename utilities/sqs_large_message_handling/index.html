@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.802231af.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -80,7 +80,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Lambda Powertools Java" class="md-header__button md-logo" aria-label="Lambda Powertools Java" data-md-component="logo">
       
@@ -158,11 +160,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -246,10 +251,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        Core utilities
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Core utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Core utilities" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -258,6 +267,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -268,8 +278,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -280,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -292,6 +306,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -316,10 +331,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        Utilities
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Utilities" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -328,6 +347,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -338,8 +358,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -361,6 +383,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -393,6 +417,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#overriding-the-default-s3client" class="md-nav__link">
+    Overriding the default S3Client
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -400,8 +431,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -412,8 +445,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -424,6 +459,21 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_resources/" class="md-nav__link">
+        Custom resources
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -443,6 +493,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -471,6 +523,13 @@
         <li class="md-nav__item">
   <a href="#utility" class="md-nav__link">
     Utility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overriding-the-default-s3client" class="md-nav__link">
+    Overriding the default S3Client
   </a>
   
 </li>
@@ -570,7 +629,7 @@ utility can delete the message payloads from S3.</p>
 <span class="hll">    <span class="nt">&lt;dependency&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;artifactId&gt;</span>powertools-sqs<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.7.3<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.8.0<span class="nt">&lt;/version&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;/dependency&gt;</span>
 </span>    ...
 <span class="nt">&lt;/dependencies&gt;</span>
@@ -614,8 +673,8 @@ utility can delete the message payloads from S3.</p>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="n">dependencies</span> <span class="o">{</span>
     <span class="o">...</span>
-    <span class="n">implementation</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.3&#39;</span>
-    <span class="n">aspectpath</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.7.3&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.8.0&#39;</span>
+    <span class="n">aspectpath</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.8.0&#39;</span>
 <span class="o">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -761,6 +820,47 @@ processing.</p>
 </td></tr></table>
 </div>
 </div>
+<h2 id="overriding-the-default-s3client">Overriding the default S3Client<a class="headerlink" href="#overriding-the-default-s3client" title="Permanent link">&para;</a></h2>
+<p>If you require customisations to the default S3Client, you can create your own <code>S3Client</code> and pass it to be used by utility either for
+<strong><a href="#lambda-handler">SqsLargeMessage annotation</a></strong>, or <strong><a href="#utility">SqsUtils Utility API</a></strong>.</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">App.java</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.sqs.SqsLargeMessage</span><span class="p">;</span>
+
+<span class="kd">static</span> <span class="p">{</span>
+<span class="hll">    <span class="n">SqsUtils</span><span class="p">.</span><span class="na">overrideS3Client</span><span class="p">(</span><span class="n">S3Client</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+</span><span class="hll">            <span class="p">.</span><span class="na">build</span><span class="p">());</span>
+</span><span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SqsMessageHandler</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="nd">@Override</span>
+<span class="hll">    <span class="nd">@SqsLargeMessage</span>
+</span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">sqsEvent</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// process messages</span>
+
+    <span class="k">return</span> <span class="s">&quot;ok&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
                 
                   
                     
@@ -769,7 +869,7 @@ processing.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-09-14
+      Last update: 2021-11-05
     
   </small>
 </div>
@@ -833,10 +933,12 @@ processing.</p>
             Copyright &copy; 2021 Amazon Web Services
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -848,10 +950,10 @@ processing.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
