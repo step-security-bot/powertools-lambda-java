@@ -339,6 +339,19 @@
     Capturing context Lambda info
   </a>
   
+    <nav class="md-nav" aria-label="Capturing context Lambda info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-fields-in-logs" class="md-nav__link">
+    Customising  fields in logs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -385,6 +398,13 @@
         <li class="md-nav__item">
   <a href="#sampling-debug-logs" class="md-nav__link">
     Sampling debug logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml" class="md-nav__link">
+    Upgrade to JsonTemplateLayout from deprecated LambdaJsonLayout configuration in log4j2.xml
   </a>
   
 </li>
@@ -581,6 +601,19 @@
     Capturing context Lambda info
   </a>
   
+    <nav class="md-nav" aria-label="Capturing context Lambda info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customising-fields-in-logs" class="md-nav__link">
+    Customising  fields in logs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -631,6 +664,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml" class="md-nav__link">
+    Upgrade to JsonTemplateLayout from deprecated LambdaJsonLayout configuration in log4j2.xml
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -658,7 +698,13 @@
 <li>Append additional keys to structured log at any point in time</li>
 </ul>
 <h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h2>
-<p>Powertools extends the functionality of Log4J. Below is an example <code class="highlight">log4j2.xml</code> file, with the <code class="highlight"><span class="n">LambdaJsonLayout</span></code> configured.</p>
+<p>Powertools extends the functionality of Log4J. Below is an example <code class="highlight">log4j2.xml</code> file, with the <code>JsonTemplateLayout</code> using <code class="highlight"><span class="err">LambdaJso</span><span class="kc">n</span><span class="err">Layou</span><span class="kc">t</span><span class="err">.jso</span><span class="kc">n</span></code> configured. </p>
+<div class="admonition info">
+<p class="admonition-title">LambdaJsonLayout is now deprecated</p>
+<p>Configuring utiltiy using <code>&lt;LambdaJsonLayout/&gt;</code> plugin is deprecated now. While utility still supports the old configuration, we strongly recommend upgrading the 
+<code>log4j2.xml</code> configuration to <code>JsonTemplateLayout</code> instead. <a href="https://logging.apache.org/log4j/2.x/manual/json-template-layout.html">JsonTemplateLayout</a> is recommended way of doing structured logging.</p>
+<p>Please follow <a href="#upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml">this guide</a> for upgrade steps.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">log4j2.xml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -678,10 +724,10 @@
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;Configuration</span> <span class="na">packages=</span><span class="s">&quot;com.amazonaws.services.lambda.runtime.log4j2&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;Configuration&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
         <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
-<span class="hll">            <span class="nt">&lt;LambdaJsonLayout</span> <span class="na">compact=</span><span class="s">&quot;true&quot;</span> <span class="na">eventEol=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="hll">            <span class="nt">&lt;JsonTemplateLayout</span> <span class="na">eventTemplateUri=</span><span class="s">&quot;classpath:LambdaJsonLayout.json&quot;</span> <span class="nt">/&gt;</span>
 </span>        <span class="nt">&lt;/Console&gt;</span>
     <span class="nt">&lt;/Appenders&gt;</span>
     <span class="nt">&lt;Loggers&gt;</span>
@@ -891,9 +937,71 @@ to customise what is logged.</p>
 </div>
 </div>
 </div>
+<h3 id="customising-fields-in-logs">Customising  fields in logs<a class="headerlink" href="#customising-fields-in-logs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utility by default emits <code>timestamp</code> field in the logs in format <code>yyyy-MM-dd'T'HH:mm:ss.SSSZz</code> and in system default timezone. 
+If you need to customize format and timezone, you can do so by configuring <code>log4j2.component.properties</code> and configuring properties as shown in example below:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">log4j2.component.properties</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="na">log4j.layout.jsonTemplate.timestampFormatPattern</span><span class="o">=</span><span class="s">yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZz</span>
+</span><span class="hll"><span class="na">log4j.layout.jsonTemplate.timeZone</span><span class="o">=</span><span class="s">Europe/Oslo</span>
+</span></code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+<ul>
+<li>
+<p>Utility also provides sample template for <a href="https://www.elastic.co/guide/en/ecs/current/ecs-reference.html">Elastic Common Schema(ECS)</a> layout.
+The field emitted in logs will follow specs from <a href="https://www.elastic.co/guide/en/ecs/current/ecs-reference.html">ECS</a> together with field captured by utility as mentioned <a href="#standard-structured-keys">above</a>.</p>
+<p>Use <code>LambdaEcsLayout.json</code> as <code>eventTemplateUri</code> when configuring <code>JsonTemplateLayout</code>.</p>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">log4j2.xml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;Configuration&gt;</span>
+    <span class="nt">&lt;Appenders&gt;</span>
+        <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
+<span class="hll">            <span class="nt">&lt;JsonTemplateLayout</span> <span class="na">eventTemplateUri=</span><span class="s">&quot;classpath:LambdaEcsLayout.json&quot;</span> <span class="nt">/&gt;</span>
+</span>        <span class="nt">&lt;/Console&gt;</span>
+    <span class="nt">&lt;/Appenders&gt;</span>
+    <span class="nt">&lt;Loggers&gt;</span>
+        <span class="nt">&lt;Logger</span> <span class="na">name=</span><span class="s">&quot;JsonLogger&quot;</span> <span class="na">level=</span><span class="s">&quot;INFO&quot;</span> <span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Logger&gt;</span>
+        <span class="nt">&lt;Root</span> <span class="na">level=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Root&gt;</span>
+    <span class="nt">&lt;/Loggers&gt;</span>
+<span class="nt">&lt;/Configuration&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
 <h2 id="setting-a-correlation-id">Setting a Correlation ID<a class="headerlink" href="#setting-a-correlation-id" title="Permanent link">&para;</a></h2>
 <p>You can set a Correlation ID using <code>correlationIdPath</code> attribute by passing a <a href="https://datatracker.ietf.org/doc/html/draft-ietf-appsawg-json-pointer-03" target="_blank">JSON Pointer expression</a>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">App.java</label><label for="__tabbed_4_2">Example Event</label><label for="__tabbed_4_3">Example CloudWatch Logs excerpt</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">App.java</label><label for="__tabbed_6_2">Example Event</label><label for="__tabbed_6_3">Example CloudWatch Logs excerpt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -970,7 +1078,7 @@ to customise what is logged.</p>
 </div>
 <p>We provide <a href="https://datatracker.ietf.org/doc/html/draft-ietf-appsawg-json-pointer-03" target="_blank">built-in JSON Pointer expression</a> 
 for known event sources, where either a request ID or X-Ray Trace ID are present.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">App.java</label><label for="__tabbed_5_2">Example Event</label><label for="__tabbed_5_3">Example CloudWatch Logs excerpt</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">App.java</label><label for="__tabbed_7_2">Example Event</label><label for="__tabbed_7_3">Example CloudWatch Logs excerpt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1055,7 +1163,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 </p>
 </div>
 <p>You can append your own keys to your existing logs via <code>appendKey</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">App.java</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1108,7 +1216,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 </div>
 <h3 id="removing-additional-keys">Removing additional keys<a class="headerlink" href="#removing-additional-keys" title="Permanent link">&para;</a></h3>
 <p>You can remove any additional key from entry using <code>LoggingUtils.removeKeys()</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">App.java</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1165,7 +1273,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <p>Logger is commonly initialized in the global scope. Due to <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda Execution Context reuse</a>, 
 this means that custom keys can be persisted across invocations. If you want all custom keys to be deleted, you can use 
 <code>clearState=true</code> attribute on <code>@Logging</code> annotation.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">App.java</label><label for="__tabbed_8_2">#1 Request</label><label for="__tabbed_8_3">#2 Request</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">App.java</label><label for="__tabbed_10_2">#1 Request</label><label for="__tabbed_10_3">#2 Request</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1264,7 +1372,7 @@ this means that custom keys can be persisted across invocations. If you want all
 <p>You can optionally choose to override default object mapper which is used to serialize lambda function events. You might
 want to supply custom object mapper in order to control how serialisation is done, for example, when you want to log only
 specific fields from received event due to security.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">App.java</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1312,7 +1420,7 @@ via <code>samplingRate</code> attribute on annotation. </p>
 <p class="admonition-title">Info</p>
 <p>Configuration on environment variable is given precedence over sampling rate configuration on annotation, provided it's in valid value range.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Sampling via annotation attribute</label><label for="__tabbed_10_2">Sampling via environment variable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Sampling via annotation attribute</label><label for="__tabbed_12_2">Sampling via environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1364,13 +1472,91 @@ via <code>samplingRate</code> attribute on annotation. </p>
 </div>
 </div>
 </div>
+<h2 id="upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml">Upgrade to JsonTemplateLayout from deprecated LambdaJsonLayout configuration in log4j2.xml<a class="headerlink" href="#upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml" title="Permanent link">&para;</a></h2>
+<p>Prior to version <a href="https://github.com/awslabs/aws-lambda-powertools-java/releases/tag/v1.10.0">1.10.0</a>, only supported way of configuring <code>log4j2.xml</code> was via  <code>&lt;LambdaJsonLayout/&gt;</code>. This plugin is 
+deprecated now and will be removed in future version. Switching to <code>JsonTemplateLayout</code> is straight forward. </p>
+<p>Below examples shows deprecated and new configuration of <code>log4j2.xml</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Deprecated configuration of log4j2.xml</label><label for="__tabbed_13_2">New configuration of log4j2.xml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;Configuration&gt;</span>
+    <span class="nt">&lt;Appenders&gt;</span>
+        <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
+<span class="hll">            <span class="nt">&lt;LambdaJsonLayout</span> <span class="na">compact=</span><span class="s">&quot;true&quot;</span> <span class="na">eventEol=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+</span>        <span class="nt">&lt;/Console&gt;</span>
+    <span class="nt">&lt;/Appenders&gt;</span>
+    <span class="nt">&lt;Loggers&gt;</span>
+        <span class="nt">&lt;Logger</span> <span class="na">name=</span><span class="s">&quot;JsonLogger&quot;</span> <span class="na">level=</span><span class="s">&quot;INFO&quot;</span> <span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Logger&gt;</span>
+        <span class="nt">&lt;Root</span> <span class="na">level=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Root&gt;</span>
+    <span class="nt">&lt;/Loggers&gt;</span>
+<span class="nt">&lt;/Configuration&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;Configuration&gt;</span>
+    <span class="nt">&lt;Appenders&gt;</span>
+        <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
+<span class="hll">            <span class="nt">&lt;JsonTemplateLayout</span> <span class="na">eventTemplateUri=</span><span class="s">&quot;classpath:LambdaJsonLayout.json&quot;</span> <span class="nt">/&gt;</span>
+</span>        <span class="nt">&lt;/Console&gt;</span>
+    <span class="nt">&lt;/Appenders&gt;</span>
+    <span class="nt">&lt;Loggers&gt;</span>
+        <span class="nt">&lt;Logger</span> <span class="na">name=</span><span class="s">&quot;JsonLogger&quot;</span> <span class="na">level=</span><span class="s">&quot;INFO&quot;</span> <span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Logger&gt;</span>
+        <span class="nt">&lt;Root</span> <span class="na">level=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AppenderRef</span> <span class="na">ref=</span><span class="s">&quot;JsonAppender&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Root&gt;</span>
+    <span class="nt">&lt;/Loggers&gt;</span>
+<span class="nt">&lt;/Configuration&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2021-07-26
+      2021-12-27
     
   </small>
 </div>
