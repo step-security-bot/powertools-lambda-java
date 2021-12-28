@@ -22,11 +22,11 @@ import java.io.OutputStreamWriter;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.fasterxml.jackson.core.JsonPointer;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.jr.stree.JrsObject;
+import com.fasterxml.jackson.jr.stree.JrsValue;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,7 +40,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclarePrecedence;
 import org.aspectj.lang.annotation.Pointcut;
 import software.amazon.lambda.powertools.logging.Logging;
-import software.amazon.lambda.powertools.logging.LoggingUtils;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Optional.empty;
@@ -55,7 +54,10 @@ import static software.amazon.lambda.powertools.core.internal.LambdaHandlerProce
 import static software.amazon.lambda.powertools.core.internal.LambdaHandlerProcessor.serviceName;
 import static software.amazon.lambda.powertools.logging.LoggingUtils.appendKey;
 import static software.amazon.lambda.powertools.logging.LoggingUtils.appendKeys;
+import static software.amazon.lambda.powertools.logging.LoggingUtils.jsonMapper;
 import static software.amazon.lambda.powertools.logging.LoggingUtils.objectMapper;
+import static software.amazon.lambda.powertools.logging.LoggingUtils.setCorrelationId;
+import static software.amazon.lambda.powertools.logging.LoggingUtils.shouldUseDeprecatedMapper;
 
 @Aspect
 @DeclarePrecedence("*, SqsLargeMessageAspect, LambdaLoggingAspect")
@@ -183,14 +185,19 @@ public final class LambdaLoggingAspect {
     }
 
     private Object[] captureCorrelationId(final String correlationIdPath,
-                                          final ProceedingJoinPoint pjp) {
+                                          final ProceedingJoinPoint pjp) throws IOException {
         Object[] args = pjp.getArgs();
         if (isHandlerMethod(pjp)) {
             if (placedOnRequestHandler(pjp)) {
                 Object arg = pjp.getArgs()[0];
-                JsonNode jsonNode = objectMapper().valueToTree(arg);
 
-                setCorrelationIdFromNode(correlationIdPath, pjp, jsonNode);
+                if(shouldUseDeprecatedMapper()) {
+                    JsonNode jsonNode = objectMapper().valueToTree(arg);
+                    setCorrelationIdFromNode(correlationIdPath, pjp, jsonNode);
+                } else  {
+                    JrsObject treeNode = jsonMapper().treeFrom(jsonMapper().asString(arg));
+                    setCorrelationIdFromTreeNode(correlationIdPath, pjp, treeNode);
+                }
 
                 return args;
             }
@@ -198,10 +205,15 @@ public final class LambdaLoggingAspect {
             if (placedOnStreamHandler(pjp)) {
                 try {
                     byte[] bytes = bytesFromInputStreamSafely((InputStream) pjp.getArgs()[0]);
-                    JsonNode jsonNode = objectMapper().readTree(bytes);
-                    args[0] = new ByteArrayInputStream(bytes);
+                    if(shouldUseDeprecatedMapper()) {
+                        JsonNode jsonNode = objectMapper().readTree(bytes);
+                        setCorrelationIdFromNode(correlationIdPath, pjp, jsonNode);
+                    }  else  {
+                        JrsObject treeNode = jsonMapper().treeFrom(bytes);
+                        setCorrelationIdFromTreeNode(correlationIdPath, pjp, treeNode);
+                    }
 
-                    setCorrelationIdFromNode(correlationIdPath, pjp, jsonNode);
+                    args[0] = new ByteArrayInputStream(bytes);
 
                     return args;
                 } catch (IOException e) {
@@ -214,12 +226,28 @@ public final class LambdaLoggingAspect {
         return args;
     }
 
-    private void setCorrelationIdFromNode(String correlationIdPath, ProceedingJoinPoint pjp, JsonNode jsonNode) {
+    @Deprecated
+    private void setCorrelationIdFromNode(String correlationIdPath,
+                                          ProceedingJoinPoint pjp,
+                                          JsonNode jsonNode) {
         JsonNode node = jsonNode.at(JsonPointer.compile(correlationIdPath));
 
         String asText = node.asText();
         if (null != asText && !asText.isEmpty()) {
-            LoggingUtils.setCorrelationId(asText);
+            setCorrelationId(asText);
+        } else {
+            logger(pjp).debug("Unable to extract any correlation id. Is your function expecting supported event type?");
+        }
+    }
+
+    private void setCorrelationIdFromTreeNode(String correlationIdPath,
+                                               ProceedingJoinPoint pjp,
+                                               JrsObject nodeMap) {
+        JrsValue node = nodeMap.at(JsonPointer.compile(correlationIdPath));
+
+        String asText = node.asText();
+        if (null != asText && !asText.isEmpty()) {
+            setCorrelationId(asText);
         } else {
             logger(pjp).debug("Unable to extract any correlation id. Is your function expecting supported event type?");
         }
@@ -233,7 +261,15 @@ public final class LambdaLoggingAspect {
             args[0] = new ByteArrayInputStream(bytes);
             Logger log = logger(pjp);
 
-            asJson(pjp, objectMapper().readValue(bytes, Map.class))
+            Map target;
+
+            if(shouldUseDeprecatedMapper()) {
+                target = objectMapper().readValue(bytes, Map.class);
+            } else {
+                target = jsonMapper().mapFrom(bytes);
+            }
+
+            asJson(pjp, target)
                     .ifPresent(log::info);
 
         } catch (IOException e) {
@@ -258,8 +294,12 @@ public final class LambdaLoggingAspect {
     private Optional<String> asJson(final ProceedingJoinPoint pjp,
                                     final Object target) {
         try {
-            return ofNullable(objectMapper().writeValueAsString(target));
-        } catch (JsonProcessingException e) {
+            if (shouldUseDeprecatedMapper()) {
+                return ofNullable(objectMapper().writeValueAsString(target));
+            } else {
+                return ofNullable(jsonMapper().asString(target));
+            }
+        } catch (IOException e) {
             logger(pjp).error("Failed logging event of type {}", target.getClass(), e);
             return empty();
         }

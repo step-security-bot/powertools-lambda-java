@@ -14,8 +14,9 @@
 package software.amazon.lambda.powertools.logging;
 
 import java.util.Map;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jr.ob.JSON;
+import com.fasterxml.jackson.jr.stree.JacksonJrsTreeCodec;
 import org.apache.logging.log4j.ThreadContext;
 
 import static java.util.Arrays.asList;
@@ -27,6 +28,7 @@ import static java.util.Arrays.asList;
  */
 public final class LoggingUtils {
     private static ObjectMapper objectMapper;
+    private static JSON jsonMapper;
 
     private LoggingUtils() {
     }
@@ -90,6 +92,24 @@ public final class LoggingUtils {
      */
     public static void defaultObjectMapper(ObjectMapper objectMapper) {
         LoggingUtils.objectMapper = objectMapper;
+    }
+
+    public static void defaultJsonMapper(JSON json) {
+        LoggingUtils.jsonMapper = json;
+    }
+
+    public static JSON jsonMapper() {
+        if (null == jsonMapper) {
+            jsonMapper = JSON.builder().
+                    treeCodec((new JacksonJrsTreeCodec()))
+                    .build();
+        }
+
+        return jsonMapper;
+    }
+
+    public static boolean shouldUseDeprecatedMapper() {
+        return null != objectMapper;
     }
 
     public static ObjectMapper objectMapper() {
