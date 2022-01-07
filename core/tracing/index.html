@@ -364,6 +364,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#override-default-object-mapper" class="md-nav__link">
+    Override default object mapper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#utilities" class="md-nav__link">
     Utilities
   </a>
@@ -546,6 +553,13 @@
         <li class="md-nav__item">
   <a href="#annotations-metadata" class="md-nav__link">
     Annotations &amp; Metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#override-default-object-mapper" class="md-nav__link">
+    Override default object mapper
   </a>
   
 </li>
@@ -810,10 +824,63 @@ context for an operation using any native object.</p>
 </div>
 </div>
 </div>
+<h2 id="override-default-object-mapper">Override default object mapper<a class="headerlink" href="#override-default-object-mapper" title="Permanent link">&para;</a></h2>
+<p>You can optionally choose to override default object mapper which is used to serialize method response and exceptions when enabled. You might
+want to supply custom object mapper in order to control how serialisation is done, for example, when you want to log only
+specific fields from received event due to security.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">App.java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.tracing.Tracing</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.tracing.TracingUtils</span><span class="p">;</span>
+<span class="kn">import static</span> <span class="nn">software.amazon.lambda.powertools.tracing.CaptureMode.RESPONSE</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Handler for requests to Lambda function.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span> 
+    <span class="kd">static</span> <span class="p">{</span>
+<span class="hll">        <span class="n">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">SimpleModule</span> <span class="n">simpleModule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleModule</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">objectMapper</span><span class="p">.</span><span class="na">registerModule</span><span class="p">(</span><span class="n">simpleModule</span><span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="n">TracingUtils</span><span class="p">.</span><span class="na">defaultObjectMapper</span><span class="p">(</span><span class="n">objectMapper</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+
+    <span class="nd">@Tracing</span><span class="p">(</span><span class="n">captureMode</span> <span class="o">=</span> <span class="n">RESPONSE</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
 <h2 id="utilities">Utilities<a class="headerlink" href="#utilities" title="Permanent link">&para;</a></h2>
 <p>Tracing modules comes with certain utility method when you don't want to use annotation for capturing a code block
 under a subsegment, or you are doing multithreaded programming. Refer examples below.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Functional Api</label><label for="__tabbed_5_2">Multi Threaded Programming</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Functional Api</label><label for="__tabbed_6_2">Multi Threaded Programming</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -888,7 +955,7 @@ under a subsegment, or you are doing multithreaded programming. Refer examples b
   <small>
     
       Last update:
-      2021-12-15
+      2022-01-07
     
   </small>
 </div>
