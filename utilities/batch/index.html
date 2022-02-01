@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2b4465f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -729,7 +729,7 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 <span class="hll">    <span class="nt">&lt;dependency&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;artifactId&gt;</span>powertools-sqs<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.10.2<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.10.3<span class="nt">&lt;/version&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;/dependency&gt;</span>
 </span>    ...
 <span class="nt">&lt;/dependencies&gt;</span>
@@ -790,7 +790,7 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 
 <span class="n">dependencies</span> <span class="o">{</span>
     <span class="o">...</span>
-    <span class="n">aspect</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.10.2&#39;</span>
+    <span class="n">aspect</span> <span class="s1">&#39;software.amazon.lambda:powertools-sqs:1.10.3&#39;</span>
 <span class="o">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -801,7 +801,9 @@ More details on how Lambda works with SQS can be found in the <a href="https://d
 <p>This utility requires additional permissions to work as expected. Lambda functions using this utility require the <code>sqs:DeleteMessageBatch</code> permission.</p>
 <p>If you are also using <a href="#move-non-retryable-messages-to-a-dead-letter-queue">nonRetryableExceptions</a> attribute, utility will need additional permission of <code>sqs:GetQueueAttributes</code> on source SQS. 
 It also needs <code>sqs:SendMessage</code> and <code>sqs:SendMessageBatch</code> on configured dead letter queue.  </p>
-<p>Refer <a href="https://github.com/aws-samples/aws-lambda-powertools-examples/blob/main/java/SqsBatchProcessing/template.yaml#L67">example project</a> for policy details example.</p>
+<p>If source or dead letter queue is configured to use encryption at rest using <a href="https://aws.amazon.com/kms/">AWS Key Management Service (KMS)</a>, function will need additional permissions of 
+<code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> on the KMS key being used for encryption. Refer <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-key-management.html#compatibility-with-aws-services">docs</a> for more details.</p>
+<p>Refer <a href="https://github.com/aws-samples/aws-lambda-powertools-examples/blob/main/java/SqsBatchProcessing/template.yaml#L105">example project</a> for policy details example.</p>
 <h2 id="processing-messages-from-sqs">Processing messages from SQS<a class="headerlink" href="#processing-messages-from-sqs" title="Permanent link">&para;</a></h2>
 <p>You can use either <strong><a href="#sqsbatch-annotation">SqsBatch annotation</a></strong>, or <strong><a href="#sqsutils-utility-api">SqsUtils Utility API</a></strong> as a fluent API.</p>
 <p>Both have nearly the same behaviour when it comes to processing messages from the batch:</p>
@@ -1250,7 +1252,7 @@ to configure such exceptions. </p>
   <small>
     
       Last update:
-      2022-01-06
+      2022-02-01
     
   </small>
 </div>
@@ -1323,10 +1325,10 @@ to configure such exceptions. </p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
