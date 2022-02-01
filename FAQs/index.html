@@ -297,6 +297,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-use-powertools-with-kotlin-projects" class="md-nav__link">
+    How can I use Powertools with Kotlin projects?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -520,6 +527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-use-powertools-with-kotlin-projects" class="md-nav__link">
+    How can I use Powertools with Kotlin projects?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -571,13 +585,38 @@
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="how-can-i-use-powertools-with-kotlin-projects">How can I use Powertools with Kotlin projects?<a class="headerlink" href="#how-can-i-use-powertools-with-kotlin-projects" title="Permanent link">&para;</a></h2>
+<p>Poweretools uses <code>aspectj-maven-plugin</code> to compile-time weave (CTW) aspects into the project. When using it with Kotlin projects, it is required to <code>forceAjcCompile</code>. 
+No explicit configuration should be required for gradle projects. </p>
+<p>To enable <code>forceAjcCompile</code> you need to use following <code>aspectj-maven-plugin</code> configuration:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
+<span class="hll">    <span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span> 
+</span>    ...
+    <span class="nt">&lt;aspectLibraries&gt;</span>
+        <span class="nt">&lt;aspectLibrary&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>powertools-logging<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/aspectLibrary&gt;</span>
+    <span class="nt">&lt;/aspectLibraries&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+</td></tr></table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-06
+      2022-02-01
     
   </small>
 </div>
