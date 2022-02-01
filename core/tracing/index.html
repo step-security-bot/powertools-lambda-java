@@ -384,6 +384,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#testing-your-code" class="md-nav__link">
+    Testing your code
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing your code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-environment-variable-on-project-level-recommended" class="md-nav__link">
+    Configure environment variable on project level (Recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-test-cases-not-recommended" class="md-nav__link">
+    Configure test cases (Not Recommended)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -575,6 +602,33 @@
   <a href="#instrumenting-sdk-clients-and-http-calls" class="md-nav__link">
     Instrumenting SDK clients and HTTP calls
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-code" class="md-nav__link">
+    Testing your code
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing your code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-environment-variable-on-project-level-recommended" class="md-nav__link">
+    Configure environment variable on project level (Recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-test-cases-not-recommended" class="md-nav__link">
+    Configure test cases (Not Recommended)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -949,13 +1003,138 @@ under a subsegment, or you are doing multithreaded programming. Refer examples b
 <h2 id="instrumenting-sdk-clients-and-http-calls">Instrumenting SDK clients and HTTP calls<a class="headerlink" href="#instrumenting-sdk-clients-and-http-calls" title="Permanent link">&para;</a></h2>
 <p>User should make sure to instrument the SDK clients explicitly based on the function dependency. Refer details on
 <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-java-awssdkclients.html">how to instrument SDK client with Xray</a> and <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-java-httpclients.html">outgoing http calls</a>.</p>
+<h2 id="testing-your-code">Testing your code<a class="headerlink" href="#testing-your-code" title="Permanent link">&para;</a></h2>
+<p>When using <code>@Tracing</code> annotation, your Junit test cases needs to be configured to create parent Segment required by <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-java.html">AWS X-Ray SDK for Java</a>.</p>
+<p>Below are two ways in which you can configure your tests.</p>
+<h4 id="configure-environment-variable-on-project-level-recommended">Configure environment variable on project level (Recommended)<a class="headerlink" href="#configure-environment-variable-on-project-level-recommended" title="Permanent link">&para;</a></h4>
+<p>You can choose to configure environment variable on project level for your test cases run. This is recommended approach as it will avoid the need of configuring each test case specifically.</p>
+<p>Below are examples configuring your maven/gradle projects. You can choose to configure it differently as well as long as you are making sure that environment variable <code>LAMBDA_TASK_ROOT</code> is set. This variable is 
+used internally via AWS X-Ray SDK to configure itself properly for lambda runtime.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Maven (pom.xml)</label><label for="__tabbed_7_2">Gradle (build.gradle) </label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;build&gt;</span>
+    ...
+  <span class="nt">&lt;plugins&gt;</span>
+<span class="hll">    <span class="cm">&lt;!--  Configures environment variable to avoid initialization of AWS X-Ray segments for each tests--&gt;</span>
+</span><span class="hll">      <span class="nt">&lt;plugin&gt;</span>
+</span><span class="hll">          <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span><span class="hll">          <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span class="hll">          <span class="nt">&lt;configuration&gt;</span>
+</span><span class="hll">              <span class="nt">&lt;environmentVariables&gt;</span>
+</span><span class="hll">                  <span class="nt">&lt;LAMBDA_TASK_ROOT&gt;</span>handler<span class="nt">&lt;/LAMBDA_TASK_ROOT&gt;</span>
+</span><span class="hll">              <span class="nt">&lt;/environmentVariables&gt;</span>
+</span><span class="hll">          <span class="nt">&lt;/configuration&gt;</span>
+</span><span class="hll">      <span class="nt">&lt;/plugin&gt;</span>
+</span>  <span class="nt">&lt;/plugins&gt;</span>
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">//</span><span class="w"> </span><span class="err">Co</span><span class="kc">nf</span><span class="err">igures</span><span class="w"> </span><span class="err">e</span><span class="kc">n</span><span class="err">viro</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span><span class="w"> </span><span class="err">variable</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">avoid</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">ializa</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="err">AWS</span><span class="w"> </span><span class="err">X</span><span class="mi">-</span><span class="err">Ray</span><span class="w"> </span><span class="err">segme</span><span class="kc">nts</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="kc">tests</span><span class="w"></span>
+<span class="hll"><span class="kc">test</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="err">e</span><span class="kc">n</span><span class="err">viro</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span><span class="w"> </span><span class="s2">&quot;LAMBDA_TASK_ROOT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;handler&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="p">}</span><span class="w"></span>
+</span></code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+<h4 id="configure-test-cases-not-recommended">Configure test cases (Not Recommended)<a class="headerlink" href="#configure-test-cases-not-recommended" title="Permanent link">&para;</a></h4>
+<p>You can choose to configure each of your test case instead as well if you choose not to configure environment variable on project level. 
+Below is an example configuration needed for each test case.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">AppTest.java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">com.amazonaws.xray.AWSXRay</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.After</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.Before</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppTest</span> <span class="p">{</span>
+
+    <span class="nd">@Before</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="k">if</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;LAMBDA_TASK_ROOT&quot;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class="hll">            <span class="n">AWSXRay</span><span class="p">.</span><span class="na">beginSegment</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">}</span>
+</span>    <span class="p">}</span>
+
+    <span class="nd">@After</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="c1">// Needed when using sam build --use-container</span>
+</span><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="n">AWSXRay</span><span class="p">.</span><span class="na">getCurrentSubsegmentOptional</span><span class="p">().</span><span class="na">isPresent</span><span class="p">())</span> <span class="p">{</span>
+</span><span class="hll">            <span class="n">AWSXRay</span><span class="p">.</span><span class="na">endSubsegment</span><span class="p">();</span>
+</span><span class="hll">        <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">if</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;LAMBDA_TASK_ROOT&quot;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class="hll">          <span class="n">AWSXRay</span><span class="p">.</span><span class="na">endSegment</span><span class="p">();</span>
+</span><span class="hll">        <span class="p">}</span>
+</span>    <span class="p">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">successfulResponse</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// test logic</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-07
+      2022-02-01
     
   </small>
 </div>
