@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.3">
     
     
       
@@ -33,7 +33,7 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7C&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7C:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Ubuntu";--md-code-font:""}</style>
       
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jmespath-functions" class="md-skip">
+        <a href="#easy-deserialization" class="md-skip">
           Skip to content
         </a>
       
@@ -498,11 +498,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jmespath-functions" class="md-nav__link">
-    JMESPath functions
+  <a href="#easy-deserialization" class="md-nav__link">
+    Easy deserialization
   </a>
   
-    <nav class="md-nav" aria-label="JMESPath functions">
+    <nav class="md-nav" aria-label="Easy deserialization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -514,6 +514,47 @@
         
           <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventdeserializer" class="md-nav__link">
+    EventDeserializer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-events" class="md-nav__link">
+    Built-in events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jmespath-functions" class="md-nav__link">
+    JMESPath functions
+  </a>
+  
+    <nav class="md-nav" aria-label="JMESPath functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    Key features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started_1" class="md-nav__link">
     Getting started
   </a>
   
@@ -605,11 +646,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jmespath-functions" class="md-nav__link">
-    JMESPath functions
+  <a href="#easy-deserialization" class="md-nav__link">
+    Easy deserialization
   </a>
   
-    <nav class="md-nav" aria-label="JMESPath functions">
+    <nav class="md-nav" aria-label="Easy deserialization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -621,6 +662,47 @@
         
           <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventdeserializer" class="md-nav__link">
+    EventDeserializer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-events" class="md-nav__link">
+    Built-in events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jmespath-functions" class="md-nav__link">
+    JMESPath functions
+  </a>
+  
+    <nav class="md-nav" aria-label="JMESPath functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    Key features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started_1" class="md-nav__link">
     Getting started
   </a>
   
@@ -692,18 +774,484 @@
 
   <h1>Serialization Utilities</h1>
 
-<p>This module contains a set of utilities you may use in your Lambda functions, mainly associated with other modules like <a href="../validation/">validation</a> and <a href="../idempotency/">idempotency</a>, to manipulate JSON.</p>
+<p>This module contains a set of utilities you may use in your Lambda functions, to manipulate JSON.</p>
+<h2 id="easy-deserialization">Easy deserialization<a class="headerlink" href="#easy-deserialization" title="Permanent link">&para;</a></h2>
+<h3 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Easily deserialize the main content of an event (for example, the body of an API Gateway event)</li>
+<li>15+ built-in events (see the <a href="#built-in-events">list below</a>)</li>
+</ul>
+<h3 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Maven</label><label for="__tabbed_1_2">Gradle</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
+    ...
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
+<span class="hll">        <span class="nt">&lt;artifactId&gt;</span>powertools-serialization<span class="nt">&lt;/artifactId&gt;</span>
+</span>        <span class="nt">&lt;version&gt;</span>1.12.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    ...
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>implementation &#39;software.amazon.lambda:powertools-serialization:1.12.0&#39;
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+<h3 id="eventdeserializer">EventDeserializer<a class="headerlink" href="#eventdeserializer" title="Permanent link">&para;</a></h3>
+<p>The <code>EventDeserializer</code> can be used to extract the main part of an event (body, message, records) and deserialize it from JSON to your desired type.</p>
+<p>It can handle single elements like the body of an API Gateway event:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">APIGWHandler.java</label><label for="__tabbed_2_2">Product.java</label><label for="__tabbed_2_3">event</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import static</span> <span class="nn">software.amazon.lambda.powertools.utilities.EventDeserializer.extractDataFrom</span><span class="p">;</span>
+</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">APIGWHandler</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span>
+<span class="hll">            <span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">event</span><span class="p">,</span> 
+</span>            <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="hll">        <span class="n">Product</span> <span class="n">product</span> <span class="o">=</span> <span class="n">extractDataFrom</span><span class="p">(</span><span class="n">event</span><span class="p">).</span><span class="na">as</span><span class="p">(</span><span class="n">Product</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Product</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">price</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Product</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Product</span><span class="p">(</span><span class="kt">long</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="p">(</span><span class="kt">long</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPrice</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">price</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrice</span><span class="p">(</span><span class="kt">double</span> <span class="n">price</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;id\&quot;:1234, \&quot;name\&quot;:\&quot;product\&quot;, \&quot;price\&quot;:42}&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">    </span><span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/{proxy+}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/resource&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;httpMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;isBase64Encoded&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;queryStringParameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;foo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;pathParameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/resource&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;stageVariables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;baz&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qux&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Accept&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Accept-Encoding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gzip, deflate, sdch&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Accept-Language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en-US,en;q=0.8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Cache-Control&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;max-age=0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890.execute-api.us-east-1.amazonaws.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Upgrade-Insecure-Requests&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;User-Agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom User Agent String&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Via&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;X-Amz-Cf-Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cDehVQoZnx43VYQb9j2-nvCh-9z396Uhbp027Y2JvkCPNLmGJHqlaA==&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;X-Forwarded-For&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1, 127.0.0.2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;X-Forwarded-Port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;X-Forwarded-Proto&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;requestContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;accountId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789012&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;resourceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;requestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c6af9ac6-7b61-11e6-9a41-93e8deadbeef&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;requestTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;09/Apr/2015:12:34:56 +0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;requestTimeEpoch&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1428582896000</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cognitoIdentityPoolId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;accountId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cognitoIdentityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;caller&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;accessKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sourceIp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cognitoAuthenticationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cognitoAuthenticationProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;userArn&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;userAgent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom User Agent String&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/prod/path/to/resource&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;resourcePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/{proxy+}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;httpMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP/1.1&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+<p>It can also handle a collection of elements like the records of an SQS event:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">SQSHandler.java</label><label for="__tabbed_3_2">event</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import static</span> <span class="nn">software.amazon.lambda.powertools.utilities.EventDeserializer.extractDataFrom</span><span class="p">;</span>
+</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SQSHandler</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span>
+<span class="hll">            <span class="kd">final</span> <span class="n">SQSEvent</span> <span class="n">event</span><span class="p">,</span> 
+</span>            <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="hll">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="n">products</span> <span class="o">=</span> <span class="n">extractDataFrom</span><span class="p">(</span><span class="n">event</span><span class="p">).</span><span class="na">asListOf</span><span class="p">(</span><span class="n">Product</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<div class="tabbed-block">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Records&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;messageId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d9144555-9a4f-4ec3-99a0-34ce359b4b54&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;receiptHandle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13e7f7851d2eaa5c01f208ebadbf1e72==&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{  \&quot;id\&quot;: 1234,  \&quot;name\&quot;: \&quot;product\&quot;,  \&quot;price\&quot;: 42}&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">        </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;ApproximateReceiveCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;SentTimestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1601975706495&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;SenderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AROAIFU437PVZ5L2J53F5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;ApproximateFirstReceiveTimestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1601975706499&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;messageAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;md5OfBody&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13e7f7851d2eaa5c01f208ebadbf1e72&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;eventSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws:sqs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;eventSourceARN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:sqs:eu-central-1:123456789012:TestLambda&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;awsRegion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eu-central-1&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;messageId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d9144555-9a4f-4ec3-99a0-34ce359b4b54&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;receiptHandle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13e7f7851d2eaa5c01f208ebadbf1e72==&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{  \&quot;id\&quot;: 12345,  \&quot;name\&quot;: \&quot;product5\&quot;,  \&quot;price\&quot;: 45}&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">        </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;ApproximateReceiveCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;SentTimestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1601975706495&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;SenderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AROAIFU437PVZ5L2J53F5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;ApproximateFirstReceiveTimestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1601975706499&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;messageAttributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;md5OfBody&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13e7f7851d2eaa5c01f208ebadbf1e72&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;eventSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aws:sqs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;eventSourceARN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:sqs:eu-central-1:123456789012:TestLambda&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;awsRegion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eu-central-1&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the background, <code>EventDeserializer</code> is using Jackson. The <code>ObjectMapper</code> is configured in <code>JsonConfig</code>. You can customize the configuration of the mapper if needed:
+<code>JsonConfig.get().getObjectMapper()</code>. Using this feature, you don't need to add Jackson to your project and create another instance of <code>ObjectMapper</code>.</p>
+</div>
+<h3 id="built-in-events">Built-in events<a class="headerlink" href="#built-in-events" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th>Path to the content</th>
+<th>List</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APIGatewayProxyRequestEvent</code></td>
+<td><code>body</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>APIGatewayV2HTTPEvent</code></td>
+<td><code>body</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SNSEvent</code></td>
+<td><code>Records[0].Sns.Message</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SQSEvent</code></td>
+<td><code>Records[*].body</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>ScheduledEvent</code></td>
+<td><code>detail</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ApplicationLoadBalancerRequestEvent</code></td>
+<td><code>body</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>CloudWatchLogsEvent</code></td>
+<td><code>powertools_base64_gzip(data)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>CloudFormationCustomResourceEvent</code></td>
+<td><code>resourceProperties</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>KinesisEvent</code></td>
+<td><code>Records[*].kinesis.powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>KinesisFirehoseEvent</code></td>
+<td><code>Records[*].powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>KafkaEvent</code></td>
+<td><code>records[*].values[*].powertools_base64(value)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>ActiveMQEvent</code></td>
+<td><code>messages[*].powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>RabbitMQEvent</code></td>
+<td><code>rmqMessagesByQueue[*].values[*].powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>KinesisAnalyticsFirehoseInputPreprocessingEvent</code></td>
+<td><code>Records[*].kinesis.powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+<tr>
+<td><code>KinesisAnalyticsStreamsInputPreprocessingEvent</code></td>
+<td><code>Records[*].kinesis.powertools_base64(data)</code></td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
 <h2 id="jmespath-functions">JMESPath functions<a class="headerlink" href="#jmespath-functions" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><a href="https://jmespath.org/" target="_blank">JMESPath</a> is a query language for JSON used by AWS CLI and AWS Lambda Powertools for Java to get a specific part of a json.</p>
 </div>
-<h3 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
+<h3 id="key-features_1">Key features<a class="headerlink" href="#key-features_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Deserialize JSON from JSON strings, base64, and compressed data</li>
 <li>Use JMESPath to extract and combine data recursively</li>
 </ul>
-<h3 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<h3 id="getting-started_1">Getting started<a class="headerlink" href="#getting-started_1" title="Permanent link">&para;</a></h3>
 <p>You might have events that contain encoded JSON payloads as string, base64, or even in compressed format. It is a common use case to decode and extract them partially or fully as part of your Lambda function invocation.</p>
 <p>You will generally use this in combination with other Lambda Powertools modules (<a href="../validation/">validation</a> and <a href="../idempotency/">idempotency</a>) where you might need to extract a portion of your data before using them.</p>
 <h3 id="built-in-functions">Built-in functions<a class="headerlink" href="#built-in-functions" title="Permanent link">&para;</a></h3>
@@ -711,7 +1259,7 @@
 <h4 id="powertools_json-function">powertools_json function<a class="headerlink" href="#powertools_json-function" title="Permanent link">&para;</a></h4>
 <p>Use <code>powertools_json</code> function to decode any JSON string anywhere a JMESPath expression is allowed.</p>
 <p>Below example use this function to load the content from the body of an API Gateway request event as a JSON object and retrieve the id field in it:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MyHandler.java</label><label for="__tabbed_1_2">event</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">MyHandler.java</label><label for="__tabbed_4_2">event</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -842,7 +1390,7 @@
 <h4 id="powertools_base64-function">powertools_base64 function<a class="headerlink" href="#powertools_base64-function" title="Permanent link">&para;</a></h4>
 <p>Use <code>powertools_base64</code> function to decode any base64 data.</p>
 <p>Below sample will decode the base64 value within the <code>data</code> key, and decode the JSON string into a valid JSON before we can validate it.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">MyEventHandler.java</label><label for="__tabbed_2_2">schema.json</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">MyEventHandler.java</label><label for="__tabbed_5_2">schema.json</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -880,7 +1428,7 @@
 <h4 id="powertools_base64_gzip-function">powertools_base64_gzip function<a class="headerlink" href="#powertools_base64_gzip-function" title="Permanent link">&para;</a></h4>
 <p>Use <code>powertools_base64_gzip</code> function to decompress and decode base64 data.</p>
 <p>Below sample will decompress and decode base64 data.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">MyEventHandler.java</label><label for="__tabbed_3_2">schema.json</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">MyEventHandler.java</label><label for="__tabbed_6_2">schema.json</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -926,7 +1474,7 @@ Please open an issue in Github if you need us to add some common functions.</p>
 You can read the <a href="https://github.com/burtcorp/jmespath-java#adding-custom-functions">doc</a> for more information.</p>
 <p>Below is an example that takes some xml and transform it into json. Once your function is created, you need to add it
 to powertools.You can then use it to do your validation or in idempotency module.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">XMLFunction.java</label><label for="__tabbed_4_2">Handler with validation API</label><label for="__tabbed_4_3">Handler with validation annotation</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">XMLFunction.java</label><label for="__tabbed_7_2">Handler with validation API</label><label for="__tabbed_7_3">Handler with validation annotation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1039,7 +1587,7 @@ to powertools.You can then use it to do your validation or in idempotency module
   <small>
     
       Last update:
-      2022-02-16
+      2022-03-01
     
   </small>
 </div>
@@ -1100,7 +1648,7 @@ to powertools.You can then use it to do your validation or in idempotency module
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b88e97c5.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
