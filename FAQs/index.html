@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -326,7 +327,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -404,7 +405,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -586,7 +587,7 @@
 <h2 id="how-can-i-use-powertools-with-lombok">How can I use Powertools with Lombok?<a class="headerlink" href="#how-can-i-use-powertools-with-lombok" title="Permanent link">&para;</a></h2>
 <p>Poweretools uses <code>aspectj-maven-plugin</code> to compile-time weave (CTW) aspects into the project. In case you want to use <code>Lombok</code> or other compile-time preprocessor for your project, it is required to change <code>aspectj-maven-plugin</code> configuration to enable in-place weaving feature. Otherwise the plugin will ignore changes introduced by <code>Lombok</code> and will use <code>.java</code> files as a source. </p>
 <p>To enable in-place weaving feature you need to use following <code>aspectj-maven-plugin</code> configuration:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -599,7 +600,7 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
 <span class="hll">    <span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span> 
 </span><span class="hll">    <span class="nt">&lt;sources/&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;weaveDirectories&gt;</span>
@@ -613,13 +614,12 @@
         <span class="nt">&lt;/aspectLibrary&gt;</span>
     <span class="nt">&lt;/aspectLibraries&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h2 id="how-can-i-use-powertools-with-kotlin-projects">How can I use Powertools with Kotlin projects?<a class="headerlink" href="#how-can-i-use-powertools-with-kotlin-projects" title="Permanent link">&para;</a></h2>
 <p>Poweretools uses <code>aspectj-maven-plugin</code> to compile-time weave (CTW) aspects into the project. When using it with Kotlin projects, it is required to <code>forceAjcCompile</code>. 
 No explicit configuration should be required for gradle projects. </p>
 <p>To enable <code>forceAjcCompile</code> you need to use following <code>aspectj-maven-plugin</code> configuration:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -628,7 +628,7 @@ No explicit configuration should be required for gradle projects. </p>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
 <span class="hll">    <span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span> 
 </span>    ...
     <span class="nt">&lt;aspectLibraries&gt;</span>
@@ -638,11 +638,13 @@ No explicit configuration should be required for gradle projects. </p>
         <span class="nt">&lt;/aspectLibrary&gt;</span>
     <span class="nt">&lt;/aspectLibraries&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
               
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -650,7 +652,8 @@ No explicit configuration should be required for gradle projects. </p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../changelog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changelog" rel="prev">
@@ -709,10 +712,10 @@ No explicit configuration should be required for gradle projects. </p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../javascript/aws-amplify.min.js"></script>
       

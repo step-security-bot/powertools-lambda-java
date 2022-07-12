@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -282,7 +283,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1081,7 +1082,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Maven</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1121,12 +1122,12 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
     ...
 <span class="hll">    <span class="nt">&lt;dependency&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;artifactId&gt;</span>powertools-idempotency<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.12.2<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;version&gt;</span>1.12.3<span class="nt">&lt;/version&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;/dependency&gt;</span>
 </span>    ...
 <span class="nt">&lt;/dependencies&gt;</span>
@@ -1162,8 +1163,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
         ...
     <span class="nt">&lt;/plugins&gt;</span>
 <span class="nt">&lt;/build&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1197,7 +1197,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 <p class="admonition-title">Tip: You can share a single state table for all functions</p>
 <p>You can reuse the same DynamoDB table to store idempotency state. We add your function name in addition to the idempotency key as a hash key.</p>
 </div>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">AWS Serverless Application Model (SAM) example</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS Serverless Application Model (SAM) example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1222,7 +1222,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">IdempotencyTable</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::DynamoDB::Table</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Properties</span><span class="p">:</span><span class="w"></span>
@@ -1248,8 +1248,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 </span><span class="w">      </span><span class="nt">Environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Variables</span><span class="p">:</span><span class="w"></span>
 <span class="hll"><span class="w">          </span><span class="nt">IDEMPOTENCY_TABLE</span><span class="p">:</span><span class="w"> </span><span class="kt">!Ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdempotencyTable</span><span class="w"></span>
-</span></code></pre></div>
-</td></tr></table>
+</span></code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning: Large responses with DynamoDB persistence layer</p>
 <p>When using this utility with DynamoDB, your function's responses must be <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#limits-items">smaller than 400KB</a>.
@@ -1271,7 +1270,7 @@ estimate the cost.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">App.java</label><label for="__tabbed_2_2">Example event</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1291,40 +1290,38 @@ estimate the cost.</p>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span> <span class="n">SubscriptionResult</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-  <span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// we need to initialize idempotency store before the handleRequest method is called</span>
-<span class="hll">    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-</span><span class="hll">      <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</span><span class="hll">      <span class="p">).</span><span class="na">configure</span><span class="p">();</span>
-</span>  <span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// we need to initialize idempotency store before the handleRequest method is called</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="p">).</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-<span class="hll">  <span class="nd">@Idempotent</span>
-</span>  <span class="kd">public</span> <span class="n">SubscriptionResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">event</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">SubscriptionPayment</span> <span class="n">payment</span> <span class="o">=</span> <span class="n">createSubscriptionPayment</span><span class="p">(</span>
-      <span class="n">event</span><span class="p">.</span><span class="na">getUsername</span><span class="p">(),</span>
-      <span class="n">event</span><span class="p">.</span><span class="na">getProductId</span><span class="p">()</span>
-    <span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">SubscriptionPayment</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createSubscriptionPayment</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">event</span><span class="p">.</span><span class="na">getUsername</span><span class="p">(),</span><span class="w"></span>
+<span class="w">      </span><span class="n">event</span><span class="p">.</span><span class="na">getProductId</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
 
-<span class="hll">    <span class="k">return</span> <span class="k">new</span> <span class="n">SubscriptionResult</span><span class="p">(</span><span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span> <span class="s">&quot;success&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-</span>  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="p">(</span><span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xyz&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;product_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1342,7 +1339,7 @@ estimate the cost.</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>This example also demonstrates how you can integrate with <a href="../batch/">Batch utility</a>, so you can process each record in an idempotent manner.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1378,48 +1375,47 @@ estimate the cost.</p>
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSqsEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppSqsEvent</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">SQSEvent</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-  <span class="kd">public</span> <span class="nf">AppSqsEvent</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span>
-      <span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-          <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-            <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-            <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-      <span class="p">).</span><span class="na">withConfig</span><span class="p">(</span>
-           <span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-             <span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;messageId&quot;</span><span class="p">)</span> <span class="c1">// see Choosing a payload subset section</span>
-             <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-      <span class="p">).</span><span class="na">configure</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">AppSqsEvent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">          </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="p">).</span><span class="na">withConfig</span><span class="p">(</span><span class="w"></span>
+<span class="w">           </span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">             </span><span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;messageId&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// see Choosing a payload subset section</span><span class="w"></span>
+<span class="w">             </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="p">).</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-  <span class="nd">@Override</span>
-  <span class="nd">@SqsBatch</span><span class="p">(</span><span class="n">SampleMessageHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-<span class="hll">    <span class="n">dummy</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;world&quot;</span><span class="p">);</span>
-</span>    <span class="k">return</span> <span class="s">&quot;{\&quot;statusCode\&quot;: 200}&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">  </span><span class="nd">@SqsBatch</span><span class="p">(</span><span class="n">SampleMessageHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">SQSEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">dummy</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;{\&quot;statusCode\&quot;: 200}&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-<span class="hll">  <span class="nd">@Idempotent</span>
-</span><span class="hll">  <span class="kd">private</span> <span class="n">String</span> <span class="nf">dummy</span><span class="p">(</span><span class="n">String</span> <span class="n">argOne</span><span class="p">,</span> <span class="nd">@IdempotencyKey</span> <span class="n">String</span> <span class="n">argTwo</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="hll">    <span class="k">return</span> <span class="s">&quot;something&quot;</span><span class="p">;</span>
-</span>  <span class="p">}</span>
+<span class="hll"><span class="w">  </span><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="hll"><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">dummy</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">argOne</span><span class="p">,</span><span class="w"> </span><span class="nd">@IdempotencyKey</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">argTwo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;something&quot;</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SampleMessageHandler</span> <span class="kd">implements</span> <span class="n">SqsMessageHandler</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-<span class="hll">    <span class="nd">@Idempotent</span>
-</span><span class="hll">    <span class="c1">// no need to use @IdempotencyKey as there is only one parameter</span>
-</span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">process</span><span class="p">(</span><span class="n">SQSMessage</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">String</span> <span class="n">returnVal</span> <span class="o">=</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span>
-      <span class="k">return</span> <span class="n">returnVal</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SampleMessageHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SqsMessageHandler</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// no need to use @IdempotencyKey as there is only one parameter</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="n">SQSMessage</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">returnVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doSomething</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">getBody</span><span class="p">());</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">returnVal</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1444,7 +1440,7 @@ estimate the cost.</p>
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;Records&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">            </span><span class="nt">&quot;messageId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;059f36b4-87a3-44ab-83d2-661975830a7d&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1470,8 +1466,7 @@ estimate the cost.</p>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1494,7 +1489,7 @@ estimate the cost.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">PaymentFunction.java</label><label for="__tabbed_4_2">Example event</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1528,46 +1523,45 @@ estimate the cost.</p>
 <span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentFunction</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PaymentFunction</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-  <span class="kd">public</span> <span class="nf">PaymentFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span>
-<span class="hll">    <span class="p">.</span><span class="na">withConfig</span><span class="p">(</span>
-</span><span class="hll">        <span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-</span><span class="hll">          <span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;powertools_json(body)&quot;</span><span class="p">)</span>
-</span>          <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-        <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-          <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-          <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">configure</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">PaymentFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="na">withConfig</span><span class="p">(</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">          </span><span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;powertools_json(body)&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">          </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">          </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">          </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="hll"><span class="nd">@Idempotent</span>
-</span><span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">event</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">APIGatewayProxyResponseEvent</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="p">();</span>
+<span class="hll"><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="p">();</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="n">Subscription</span> <span class="n">subscription</span> <span class="o">=</span> <span class="n">JsonConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getObjectMapper</span><span class="p">().</span><span class="na">readValue</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getBody</span><span class="p">(),</span> <span class="n">Subscription</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Subscription</span><span class="w"> </span><span class="n">subscription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getObjectMapper</span><span class="p">().</span><span class="na">readValue</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getBody</span><span class="p">(),</span><span class="w"> </span><span class="n">Subscription</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
 
-    <span class="n">SubscriptionPayment</span> <span class="n">payment</span> <span class="o">=</span> <span class="n">createSubscriptionPayment</span><span class="p">(</span>
-         <span class="n">subscription</span><span class="p">.</span><span class="na">getUsername</span><span class="p">(),</span>
-         <span class="n">subscription</span><span class="p">.</span><span class="na">getProductId</span><span class="p">()</span>
-    <span class="p">);</span>
+<span class="w">    </span><span class="n">SubscriptionPayment</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createSubscriptionPayment</span><span class="p">(</span><span class="w"></span>
+<span class="w">         </span><span class="n">subscription</span><span class="p">.</span><span class="na">getUsername</span><span class="p">(),</span><span class="w"></span>
+<span class="w">         </span><span class="n">subscription</span><span class="p">.</span><span class="na">getProductId</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="n">response</span>
-<span class="hll">             <span class="p">.</span><span class="na">withStatusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-</span><span class="hll">             <span class="p">.</span><span class="na">withBody</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;{\&quot;paymentId\&quot;:\&quot;%s\&quot;}&quot;</span><span class="p">,</span> <span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">()));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">response</span><span class="w"></span>
+<span class="hll"><span class="w">             </span><span class="p">.</span><span class="na">withStatusCode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="p">.</span><span class="na">withBody</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;{\&quot;paymentId\&quot;:\&quot;%s\&quot;}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">()));</span><span class="w"></span>
 </span><span class="hll">
-</span>  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">JsonProcessingException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="na">withStatusCode</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">JsonProcessingException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">withStatusCode</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1596,7 +1590,7 @@ estimate the cost.</p>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">  </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;username\&quot;:\&quot;xyz\&quot;,\&quot;productId\&quot;:\&quot;123456789\&quot;}&quot;</span><span class="p">,</span><span class="w"></span>
 </span><span class="w">  </span><span class="nt">&quot;routeKey&quot;</span><span class="p">:</span><span class="s2">&quot;ANY /createpayment&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1626,8 +1620,7 @@ estimate the cost.</p>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;isBase64Encoded&quot;</span><span class="p">:</span><span class="kc">false</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1644,7 +1637,7 @@ estimate the cost.</p>
 This means that new invocations will execute your code again despite having the same payload. If you don't want the record to be deleted, you need to catch exceptions within the idempotent function and return a successful response.</p>
 <p><img alt="Idempotent sequence exception" src="../../media/idempotent_sequence_exception.png" /></p>
 <p>If an Exception is raised <em>outside</em> the scope of a decorated method and after your method has been called, the persistent record will not be affected. In this case, idempotency will be maintained for your decorated function. Example:</p>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Exception not affecting idempotency record sample</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exception not affecting idempotency record sample</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1659,24 +1652,23 @@ This means that new invocations will execute your code again despite having the 
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  <span class="kd">public</span> <span class="n">SubscriptionResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">event</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-<span class="hll">    <span class="c1">// If an exception is thrown here, no idempotent record will ever get created as the</span>
-</span><span class="hll">    <span class="c1">// idempotent function does not get called </span>
-</span><span class="hll">    <span class="n">doSomeStuff</span><span class="p">();</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="c1">// If an exception is thrown here, no idempotent record will ever get created as the</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// idempotent function does not get called </span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="n">doSomeStuff</span><span class="p">();</span><span class="w"></span>
 </span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">idempotentMethod</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idempotentMethod</span><span class="p">(</span><span class="n">event</span><span class="p">);</span><span class="w"></span>
 
-<span class="hll">    <span class="c1">// This exception will not cause the idempotent record to be deleted, since it</span>
-</span><span class="hll">    <span class="c1">// happens after the decorated function has been successfully called    </span>
-</span><span class="hll">    <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="p">();</span>
-</span>  <span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="c1">// This exception will not cause the idempotent record to be deleted, since it</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// happens after the decorated function has been successfully called    </span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Exception</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="nd">@Idempotent</span>
-  <span class="kd">private</span> <span class="n">String</span> <span class="nf">idempotentMethod</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">subscription</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// perform some operation with no exception thrown</span>
-  <span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">  </span><span class="nd">@Idempotent</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">idempotentMethod</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">subscription</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// perform some operation with no exception thrown</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>We will throw an <code>IdempotencyPersistenceLayerException</code></strong> if any of the calls to the persistence layer fail unexpectedly.</p>
@@ -1686,23 +1678,22 @@ This means that new invocations will execute your code again despite having the 
 <h4 id="dynamodbpersistencestore">DynamoDBPersistenceStore<a class="headerlink" href="#dynamodbpersistencestore" title="Permanent link">&para;</a></h4>
 <p>This persistence store is built-in, and you can either use an existing DynamoDB table or create a new one dedicated for idempotency state (recommended).</p>
 <p>Use the builder to customize the table structure:
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Customizing DynamoDBPersistenceStore to suit your table structure</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Customizing DynamoDBPersistenceStore to suit your table structure</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-                        <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-<span class="hll">                        <span class="p">.</span><span class="na">withKeyAttr</span><span class="p">(</span><span class="s">&quot;idempotency_key&quot;</span><span class="p">)</span>
-</span><span class="hll">                        <span class="p">.</span><span class="na">withExpiryAttr</span><span class="p">(</span><span class="s">&quot;expires_at&quot;</span><span class="p">)</span>
-</span><span class="hll">                        <span class="p">.</span><span class="na">withStatusAttr</span><span class="p">(</span><span class="s">&quot;current_status&quot;</span><span class="p">)</span>
-</span><span class="hll">                        <span class="p">.</span><span class="na">withDataAttr</span><span class="p">(</span><span class="s">&quot;result_data&quot;</span><span class="p">)</span>
-</span><span class="hll">                        <span class="p">.</span><span class="na">withValidationAttr</span><span class="p">(</span><span class="s">&quot;validation_key&quot;</span><span class="p">)</span>
-</span>                        <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table></p>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">                        </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="hll"><span class="w">                        </span><span class="p">.</span><span class="na">withKeyAttr</span><span class="p">(</span><span class="s">&quot;idempotency_key&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="p">.</span><span class="na">withExpiryAttr</span><span class="p">(</span><span class="s">&quot;expires_at&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="p">.</span><span class="na">withStatusAttr</span><span class="p">(</span><span class="s">&quot;current_status&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="p">.</span><span class="na">withDataAttr</span><span class="p">(</span><span class="s">&quot;result_data&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="p">.</span><span class="na">withValidationAttr</span><span class="p">(</span><span class="s">&quot;validation_key&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">                        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p>When using DynamoDB as a persistence layer, you can alter the attribute names by passing these parameters when initializing the persistence layer:</p>
 <table>
 <thead>
@@ -1767,7 +1758,7 @@ This means that new invocations will execute your code again despite having the 
 <h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
 <h3 id="customizing-the-default-behavior">Customizing the default behavior<a class="headerlink" href="#customizing-the-default-behavior" title="Permanent link">&para;</a></h3>
 <p>Idempotency behavior can be further configured with <strong><code>IdempotencyConfig</code></strong> using a builder:</p>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Customizing IdempotencyConfig</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Customizing IdempotencyConfig</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1775,17 +1766,16 @@ This means that new invocations will execute your code again despite having the 
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-<span class="hll">                <span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withPayloadValidationJMESPath</span><span class="p">(</span><span class="s">&quot;paymentId&quot;</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withThrowOnNoIdempotencyKey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withExpiration</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">ChronoUnit</span><span class="p">.</span><span class="na">MINUTES</span><span class="p">))</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withUseLocalCache</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withLocalCacheMaxItems</span><span class="p">(</span><span class="mi">432</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">withHashFunction</span><span class="p">(</span><span class="s">&quot;SHA-256&quot;</span><span class="p">)</span>
-</span>                <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withPayloadValidationJMESPath</span><span class="p">(</span><span class="s">&quot;paymentId&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withThrowOnNoIdempotencyKey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withExpiration</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">ChronoUnit</span><span class="p">.</span><span class="na">MINUTES</span><span class="p">))</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withUseLocalCache</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withLocalCacheMaxItems</span><span class="p">(</span><span class="mi">432</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">withHashFunction</span><span class="p">(</span><span class="s">&quot;SHA-256&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <p>These are the available options for further configuration:</p>
 <table>
 <thead>
@@ -1848,13 +1838,12 @@ This means that new invocations will execute your code again despite having the 
 <p>Be sure to configure the Lambda memory according to the number of records and the potential size of each record.</p>
 </div>
 <p>You can enable it as seen before with:
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Enable local cache</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Enable local cache</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">withUseLocalCache</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">withUseLocalCache</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 When enabled, we cache a maximum of 256 records in each Lambda execution environment - You can change it with the <strong><code>LocalCacheMaxItems</code></strong> parameter.</p>
 <div class="admonition note">
 <p class="admonition-title">Note: This in-memory cache is local to each Lambda execution environment</p>
@@ -1867,13 +1856,12 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 </div>
 <p>In most cases, it is not desirable to store the idempotency records forever. Rather, you want to guarantee that the same payload won't be executed within a period of time.</p>
 <p>You can change this window with the <strong><code>ExpirationInSeconds</code></strong> parameter:
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Customizing expiration time</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Customizing expiration time</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">withExpiration</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">ChronoUnit</span><span class="p">.</span><span class="na">MINUTES</span><span class="p">))</span>
-    <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table></p>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withExpiration</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">ChronoUnit</span><span class="p">.</span><span class="na">MINUTES</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p>Records older than 5 minutes will be marked as expired, and the Lambda handler will be executed normally even if it is invoked with a matching payload.</p>
 <div class="admonition note">
 <p class="admonition-title">Note: DynamoDB time-to-live field</p>
@@ -1889,7 +1877,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">App.java</label><label for="__tabbed_5_2">Example Event 1</label><label for="__tabbed_5_3">Example Event 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1916,39 +1904,38 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-        <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">withConfig</span><span class="p">(</span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;[userDetail, productId]&quot;</span><span class="p">)</span>
-<span class="hll">        <span class="p">.</span><span class="na">withPayloadValidationJMESPath</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">)</span>
-</span>        <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">configure</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withConfig</span><span class="p">(</span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;[userDetail, productId]&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">withPayloadValidationJMESPath</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="hll"><span class="nd">@Idempotent</span>
-</span><span class="kd">public</span> <span class="n">SubscriptionResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Creating a subscription payment is a side</span>
-    <span class="c1">// effect of calling this function!</span>
-    <span class="n">SubscriptionPayment</span> <span class="n">payment</span> <span class="o">=</span> <span class="n">createSubscriptionPayment</span><span class="p">(</span>
-      <span class="n">input</span><span class="p">.</span><span class="na">getUserDetail</span><span class="p">().</span><span class="na">getUsername</span><span class="p">(),</span>
-      <span class="n">input</span><span class="p">.</span><span class="na">getProductId</span><span class="p">(),</span>
-<span class="hll">      <span class="n">input</span><span class="p">.</span><span class="na">getAmount</span><span class="p">()</span>
-</span>    <span class="p">)</span>
-    <span class="c1">// ...</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">SubscriptionResult</span><span class="p">(</span>
-        <span class="s">&quot;success&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span>
-        <span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span>
-<span class="hll">        <span class="n">payment</span><span class="p">.</span><span class="na">getAmount</span><span class="p">()</span>
-</span>    <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="kd">public</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Creating a subscription payment is a side</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// effect of calling this function!</span><span class="w"></span>
+<span class="w">    </span><span class="n">SubscriptionPayment</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createSubscriptionPayment</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">input</span><span class="p">.</span><span class="na">getUserDetail</span><span class="p">().</span><span class="na">getUsername</span><span class="p">(),</span><span class="w"></span>
+<span class="w">      </span><span class="n">input</span><span class="p">.</span><span class="na">getProductId</span><span class="p">(),</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="n">input</span><span class="p">.</span><span class="na">getAmount</span><span class="p">()</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;success&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">payment</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">payment</span><span class="p">.</span><span class="na">getAmount</span><span class="p">()</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1956,7 +1943,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;userDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;user_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user@example.com&quot;</span><span class="w"></span>
@@ -1965,11 +1952,10 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="w">    </span><span class="nt">&quot;charge_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscription&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1977,7 +1963,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;userDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;user_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user@example.com&quot;</span><span class="w"></span>
@@ -1986,8 +1972,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="w">    </span><span class="nt">&quot;charge_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscription&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2004,7 +1989,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">App.java</label><label for="__tabbed_6_2">Success Event</label><label for="__tabbed_6_3">Failure Event</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2020,60 +2005,57 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-        <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">withConfig</span><span class="p">(</span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-        <span class="c1">// Requires &quot;user&quot;.&quot;uid&quot; and &quot;orderId&quot; to be present</span>
-        <span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;[user.uid, orderId]&quot;</span><span class="p">)</span>
-<span class="hll">        <span class="p">.</span><span class="na">withThrowOnNoIdempotencyKey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-</span>    <span class="p">.</span><span class="na">configure</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">withConfig</span><span class="p">(</span><span class="n">IdempotencyConfig</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Requires &quot;user&quot;.&quot;uid&quot; and &quot;orderId&quot; to be present</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">withEventKeyJMESPath</span><span class="p">(</span><span class="s">&quot;[user.uid, orderId]&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">withThrowOnNoIdempotencyKey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">.</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 <span class="hll">
-</span><span class="nd">@Idempotent</span>
-<span class="kd">public</span> <span class="n">OrderResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Order</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+</span><span class="nd">@Idempotent</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="n">OrderResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Order</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">        </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BB0D045C-8878-40C8-889E-38B3CB0A61B1&quot;</span><span class="p">,</span><span class="w"></span>
 </span><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Foo&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p>Notice that <code>orderId</code> is now accidentally within <code>user</code> key</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">        </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DE0D000E-1234-10D1-991E-EAC1DD1D52C8&quot;</span><span class="p">,</span><span class="w"></span>
 </span><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Joe Bloggs&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">        </span><span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
 </span><span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2082,7 +2064,7 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Custom DynamoDbClient with X-Ray interceptor</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2097,58 +2079,55 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-<span class="hll">    <span class="n">DynamoDbClient</span> <span class="n">customClient</span> <span class="o">=</span> <span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">US_WEST_2</span><span class="p">)</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">overrideConfiguration</span><span class="p">(</span><span class="n">ClientOverrideConfiguration</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-</span><span class="hll">            <span class="p">.</span><span class="na">addExecutionInterceptor</span><span class="p">(</span><span class="k">new</span> <span class="n">TracingInterceptor</span><span class="p">())</span>
-</span><span class="hll">            <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-</span><span class="hll">        <span class="p">)</span>
-</span><span class="hll">        <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">DynamoDbClient</span><span class="w"> </span><span class="n">customClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">US_WEST_2</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">overrideConfiguration</span><span class="p">(</span><span class="n">ClientOverrideConfiguration</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">.</span><span class="na">addExecutionInterceptor</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TracingInterceptor</span><span class="p">())</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
 </span>
-    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-      <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-            <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-<span class="hll">            <span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">customClient</span><span class="p">)</span>
-</span>            <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-  <span class="p">).</span><span class="na">configure</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">customClient</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">).</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Default configuration is the following:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-    <span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">EnvironmentVariableCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">())</span>
-    <span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="n">AWS_REGION_ENV</span><span class="p">)))</span>
-    <span class="p">.</span><span class="na">build</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">EnvironmentVariableCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="n">AWS_REGION_ENV</span><span class="p">)))</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <h3 id="using-a-dynamodb-table-with-a-composite-primary-key">Using a DynamoDB table with a composite primary key<a class="headerlink" href="#using-a-dynamodb-table-with-a-composite-primary-key" title="Permanent link">&para;</a></h3>
 <p>When using a composite primary key table (hash+range key), use <code>SortKeyAttr</code> parameter when initializing your persistence store.</p>
 <p>With this setting, we will save the idempotency key in the sort key instead of the primary key. By default, the primary key will now be set to <code>idempotency#{LAMBDA_FUNCTION_NAME}</code>.</p>
 <p>You can optionally set a static value for the partition key using the <code>StaticPkValue</code> parameter.</p>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Reusing a DynamoDB table that uses a composite primary key</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Reusing a DynamoDB table that uses a composite primary key</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-     <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-       <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span>
-       <span class="p">.</span><span class="na">withSortKeyAttr</span><span class="p">(</span><span class="s">&quot;sort_key&quot;</span><span class="p">)</span>
-<span class="hll">       <span class="p">.</span><span class="na">build</span><span class="p">())</span>
-</span>   <span class="p">.</span><span class="na">configure</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">     </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">       </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">       </span><span class="p">.</span><span class="na">withSortKeyAttr</span><span class="p">(</span><span class="s">&quot;sort_key&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+</span><span class="w">   </span><span class="p">.</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <p>Data would then be stored in DynamoDB like this:</p>
 <table>
 <thead>
@@ -2196,17 +2175,16 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <h2 id="compatibility-with-other-utilities">Compatibility with other utilities<a class="headerlink" href="#compatibility-with-other-utilities" title="Permanent link">&para;</a></h2>
 <h3 id="validation-utility">Validation utility<a class="headerlink" href="#validation-utility" title="Permanent link">&para;</a></h3>
 <p>The idempotency utility can be used with the <code>@Validation</code> annotation from the <a href="../validation/">validation module</a>. Ensure that idempotency is the innermost annotation.</p>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">Using Idempotency with JSONSchema Validation utility</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Using Idempotency with JSONSchema Validation utility</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span> <span class="o">=</span> <span class="s">&quot;classpath:/schema_in.json&quot;</span><span class="p">)</span>
-</span><span class="hll"><span class="nd">@Idempotent</span>
-</span><span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/schema_in.json&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="nd">@Idempotent</span><span class="w"></span>
+</span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip: JMESPath Powertools functions are also available</p>
 <p>Built-in functions like <code>powertools_json</code>, <code>powertools_base64</code>, <code>powertools_base64_gzip</code> are also available to use in this utility. See <a href="../serialization/">JMESPath Powertools functions</a></p>
@@ -2219,19 +2197,18 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">MyFunctionTest.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
-<span class="hll"><span class="nd">@SetEnvironmentVariable</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="n">Constants</span><span class="p">.</span><span class="na">IDEMPOTENCY_DISABLED_ENV</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">)</span>
-</span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">testIdempotencyDisabled_shouldJustRunTheFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">MyFunction</span> <span class="n">func</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyFunction</span><span class="p">();</span>
-    <span class="n">func</span><span class="p">.</span><span class="na">handleRequest</span><span class="p">(</span><span class="n">someInput</span><span class="p">,</span> <span class="n">mockedContext</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="hll"><span class="nd">@SetEnvironmentVariable</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Constants</span><span class="p">.</span><span class="na">IDEMPOTENCY_DISABLED_ENV</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testIdempotencyDisabled_shouldJustRunTheFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">MyFunction</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyFunction</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">func</span><span class="p">.</span><span class="na">handleRequest</span><span class="p">(</span><span class="n">someInput</span><span class="p">,</span><span class="w"> </span><span class="n">mockedContext</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2241,7 +2218,7 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <div class="tabbed-block"></div>
 </div>
 </div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2249,7 +2226,7 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;plugin&gt;</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;plugin&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;configuration&gt;</span>
@@ -2258,15 +2235,14 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 </span><span class="hll">        <span class="nt">&lt;/environmentVariables&gt;</span>
 </span>    <span class="nt">&lt;/configuration&gt;</span>
 <span class="nt">&lt;/plugin&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h3 id="testing-with-dynamodb-local">Testing with DynamoDB Local<a class="headerlink" href="#testing-with-dynamodb-local" title="Permanent link">&para;</a></h3>
 <h4 id="unit-tests">Unit tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h4>
 <p>To unit test your function with DynamoDB Local, you can refer to this guide to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html#apache-maven">setup with Maven</a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">pom.xml</label><label for="__tabbed_10_2">AppTest.java</label><label for="__tabbed_10_3">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2327,7 +2303,7 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
-<span class="normal">62</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
     <span class="cm">&lt;!-- maven dependency for DynamoDB local --&gt;</span>
     <span class="nt">&lt;dependency&gt;</span>
 <span class="hll">       <span class="nt">&lt;groupId&gt;</span>com.amazonaws<span class="nt">&lt;/groupId&gt;</span>
@@ -2389,11 +2365,10 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
         <span class="nt">&lt;/executions&gt;</span>
     <span class="nt">&lt;/plugin&gt;</span>
 <span class="nt">&lt;/plugins&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2457,76 +2432,75 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppTest</span> <span class="p">{</span>
-    <span class="nd">@Mock</span>
-    <span class="kd">private</span> <span class="n">Context</span> <span class="n">context</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">App</span> <span class="n">app</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">DynamoDbClient</span> <span class="n">client</span><span class="p">;</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppTest</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Mock</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">App</span><span class="w"> </span><span class="n">app</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">DynamoDbClient</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w"></span>
 
-    <span class="nd">@BeforeAll</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setupDynamoLocal</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">getFreePort</span><span class="p">();</span>
+<span class="w">    </span><span class="nd">@BeforeAll</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setupDynamoLocal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getFreePort</span><span class="p">();</span><span class="w"></span>
 
-        <span class="c1">// Initialize DynamoDBLocal</span>
-        <span class="k">try</span> <span class="p">{</span>
-<span class="hll">            <span class="n">DynamoDBProxyServer</span> <span class="n">dynamoProxy</span> <span class="o">=</span> <span class="n">ServerRunner</span><span class="p">.</span><span class="na">createServerFromCommandLineArgs</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span>
-</span><span class="hll">                    <span class="s">&quot;-inMemory&quot;</span><span class="p">,</span>
-</span><span class="hll">                    <span class="s">&quot;-port&quot;</span><span class="p">,</span>
-</span><span class="hll">                    <span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-</span><span class="hll">            <span class="p">});</span>
-</span><span class="hll">            <span class="n">dynamoProxy</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
-</span>        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="p">();</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="c1">// Initialize DynamoDBLocal</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="n">DynamoDBProxyServer</span><span class="w"> </span><span class="n">dynamoProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ServerRunner</span><span class="p">.</span><span class="na">createServerFromCommandLineArgs</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="s">&quot;-inMemory&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="s">&quot;-port&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">port</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">});</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">dynamoProxy</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
 
-        <span class="c1">// Initialize DynamoDBClient</span>
-<span class="hll">        <span class="n">client</span> <span class="o">=</span> <span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">())</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_WEST_1</span><span class="p">)</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">endpointOverride</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;http://localhost:&quot;</span> <span class="o">+</span> <span class="n">port</span><span class="p">))</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">StaticCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">(</span>
-</span><span class="hll">                        <span class="n">AwsBasicCredentials</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;FAKE&quot;</span><span class="p">,</span> <span class="s">&quot;FAKE&quot;</span><span class="p">)))</span>
-</span><span class="hll">                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// Initialize DynamoDBClient</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_WEST_1</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">endpointOverride</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;http://localhost:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">port</span><span class="p">))</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">StaticCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="n">AwsBasicCredentials</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;FAKE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FAKE&quot;</span><span class="p">)))</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
 </span>
-        <span class="c1">// create the table (use same table name as in pom.xml)</span>
-        <span class="n">client</span><span class="p">.</span><span class="na">createTable</span><span class="p">(</span><span class="n">CreateTableRequest</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-<span class="hll">                <span class="p">.</span><span class="na">tableName</span><span class="p">(</span><span class="s">&quot;idempotency&quot;</span><span class="p">)</span>
-</span>                <span class="p">.</span><span class="na">keySchema</span><span class="p">(</span><span class="n">KeySchemaElement</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">keyType</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">HASH</span><span class="p">).</span><span class="na">attributeName</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">())</span>
-                <span class="p">.</span><span class="na">attributeDefinitions</span><span class="p">(</span>
-                        <span class="n">AttributeDefinition</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">attributeName</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">).</span><span class="na">attributeType</span><span class="p">(</span><span class="n">ScalarAttributeType</span><span class="p">.</span><span class="na">S</span><span class="p">).</span><span class="na">build</span><span class="p">()</span>
-                <span class="p">)</span>
-                <span class="p">.</span><span class="na">billingMode</span><span class="p">(</span><span class="n">BillingMode</span><span class="p">.</span><span class="na">PAY_PER_REQUEST</span><span class="p">)</span>
-                <span class="p">.</span><span class="na">build</span><span class="p">());</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="c1">// create the table (use same table name as in pom.xml)</span><span class="w"></span>
+<span class="w">        </span><span class="n">client</span><span class="p">.</span><span class="na">createTable</span><span class="p">(</span><span class="n">CreateTableRequest</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="hll"><span class="w">                </span><span class="p">.</span><span class="na">tableName</span><span class="p">(</span><span class="s">&quot;idempotency&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">                </span><span class="p">.</span><span class="na">keySchema</span><span class="p">(</span><span class="n">KeySchemaElement</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">keyType</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">HASH</span><span class="p">).</span><span class="na">attributeName</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">attributeDefinitions</span><span class="p">(</span><span class="w"></span>
+<span class="w">                        </span><span class="n">AttributeDefinition</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">attributeName</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">).</span><span class="na">attributeType</span><span class="p">(</span><span class="n">ScalarAttributeType</span><span class="p">.</span><span class="na">S</span><span class="p">).</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">                </span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">billingMode</span><span class="p">(</span><span class="n">BillingMode</span><span class="p">.</span><span class="na">PAY_PER_REQUEST</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getFreePort</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="n">ServerSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServerSocket</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-            <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="na">getLocalPort</span><span class="p">();</span>
-            <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-            <span class="k">return</span> <span class="n">port</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="p">(</span><span class="n">ioe</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getFreePort</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ServerSocket</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServerSocket</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">socket</span><span class="p">.</span><span class="na">getLocalPort</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">port</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">ioe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">ioe</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@BeforeEach</span>
-    <span class="kt">void</span> <span class="nf">setUp</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">MockitoAnnotations</span><span class="p">.</span><span class="na">openMocks</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">App</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@BeforeEach</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">MockitoAnnotations</span><span class="p">.</span><span class="na">openMocks</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">App</span><span class="p">(</span><span class="n">client</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Test</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testApp</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">app</span><span class="p">.</span><span class="na">handleRequest</span><span class="p">(...,</span> <span class="n">context</span><span class="p">);</span>
-        <span class="c1">// ... assert</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">    </span><span class="nd">@Test</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">handleRequest</span><span class="p">(...,</span><span class="w"> </span><span class="n">context</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ... assert</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2544,27 +2518,26 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span> <span class="n">SubscriptionResult</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="nf">App</span><span class="p">(</span><span class="n">DynamoDbClient</span> <span class="n">ddbClient</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-            <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-                    <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;IDEMPOTENCY_TABLE_NAME&quot;</span><span class="p">))</span>
-                    <span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">ddbClient</span><span class="p">)</span>
-                    <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-    <span class="p">).</span><span class="na">configure</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">(</span><span class="n">DynamoDbClient</span><span class="w"> </span><span class="n">ddbClient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;IDEMPOTENCY_TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">ddbClient</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">).</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nd">@Idempotent</span>
-<span class="kd">public</span> <span class="n">SubscriptionResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">event</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="nd">@Idempotent</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2572,7 +2545,7 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">App.java</label><label for="__tabbed_11_2">shell</label><label for="__tabbed_11_3">env.json</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2597,37 +2570,36 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span> <span class="n">SubscriptionResult</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">Subscription</span><span class="p">,</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-  <span class="kd">public</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">DynamoDbClientBuilder</span> <span class="n">ddbBuilder</span> <span class="o">=</span> <span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-       <span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">EnvironmentVariableCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">())</span>
-       <span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">());</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">DynamoDbClientBuilder</span><span class="w"> </span><span class="n">ddbBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DynamoDbClient</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">       </span><span class="p">.</span><span class="na">credentialsProvider</span><span class="p">(</span><span class="n">EnvironmentVariableCredentialsProvider</span><span class="p">.</span><span class="na">create</span><span class="p">())</span><span class="w"></span>
+<span class="w">       </span><span class="p">.</span><span class="na">httpClient</span><span class="p">(</span><span class="n">UrlConnectionHttpClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">());</span><span class="w"></span>
 
-<span class="hll">    <span class="k">if</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;AWS_SAM_LOCAL&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="hll">      <span class="n">ddbBuilder</span><span class="p">.</span><span class="na">endpointOverride</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;http://dynamo:8000&quot;</span><span class="p">));</span>
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">ddbBuilder</span><span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;AWS_REGION&quot;</span><span class="p">)));</span>
-    <span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;AWS_SAM_LOCAL&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="n">ddbBuilder</span><span class="p">.</span><span class="na">endpointOverride</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;http://dynamo:8000&quot;</span><span class="p">));</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">ddbBuilder</span><span class="p">.</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;AWS_REGION&quot;</span><span class="p">)));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span>
-       <span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-<span class="hll">          <span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;IDEMPOTENCY_TABLE_NAME&quot;</span><span class="p">))</span>
-</span>          <span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">ddbBuilder</span><span class="p">.</span><span class="na">build</span><span class="p">())</span>
-          <span class="p">.</span><span class="na">build</span><span class="p">()</span>
-    <span class="p">).</span><span class="na">configure</span><span class="p">();</span>
-  <span class="p">}</span>
+<span class="w">    </span><span class="n">Idempotency</span><span class="p">.</span><span class="na">config</span><span class="p">().</span><span class="na">withPersistenceStore</span><span class="p">(</span><span class="w"></span>
+<span class="w">       </span><span class="n">DynamoDBPersistenceStore</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
+<span class="hll"><span class="w">          </span><span class="p">.</span><span class="na">withTableName</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;IDEMPOTENCY_TABLE_NAME&quot;</span><span class="p">))</span><span class="w"></span>
+</span><span class="w">          </span><span class="p">.</span><span class="na">withDynamoDbClient</span><span class="p">(</span><span class="n">ddbBuilder</span><span class="p">.</span><span class="na">build</span><span class="p">())</span><span class="w"></span>
+<span class="w">          </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">).</span><span class="na">configure</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="nd">@Idempotent</span>
-  <span class="kd">public</span> <span class="n">SubscriptionResult</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">Subscription</span> <span class="n">event</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">  </span><span class="nd">@Idempotent</span><span class="w"></span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">SubscriptionResult</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Subscription</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2648,7 +2620,7 @@ If you prefer setting this for specific tests, and are using JUnit 5, you can us
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># use or create a docker network </span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># use or create a docker network </span>
 <span class="hll">docker network inspect sam-local <span class="o">||</span> docker network create sam-local
 </span>
 <span class="c1"># start dynamodb-local with docker</span>
@@ -2670,21 +2642,19 @@ sam <span class="nb">local</span> invoke IdempotentFunction <span class="se">\</
     --event event.json <span class="se">\</span>
 <span class="hll">    --env-vars env.json <span class="se">\</span>
 </span><span class="hll">    --docker-network sam-local
-</span></code></pre></div>
-</td></tr></table>
+</span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;IdempotentFunction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">        </span><span class="nt">&quot;IDEMPOTENCY_TABLE_NAME&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;idempotency&quot;</span><span class="w"></span>
 </span><span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2694,6 +2664,9 @@ sam <span class="nb">local</span> invoke IdempotentFunction <span class="se">\</
 
               
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2701,7 +2674,8 @@ sam <span class="nb">local</span> invoke IdempotentFunction <span class="se">\</
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../core/metrics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Metrics" rel="prev">
@@ -2760,10 +2734,10 @@ sam <span class="nb">local</span> invoke IdempotentFunction <span class="se">\</
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       

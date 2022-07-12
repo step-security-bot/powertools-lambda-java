@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -282,7 +283,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -787,28 +788,26 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Maven</label><label for="__tabbed_1_2">Gradle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>powertools-parameters<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.12.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.12.3<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="o">...</span>
-    <span class="n">aspect</span> <span class="s1">&#39;software.amazon.lambda:powertools-parameters:1.12.2&#39;</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">aspect</span><span class="w"> </span><span class="s1">&#39;software.amazon.lambda:powertools-parameters:1.12.3&#39;</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -848,7 +847,7 @@ in order to get data from other regions or use specific credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">SSMProvider</label><label for="__tabbed_2_2">SSMProvider with an explicit region</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -862,26 +861,25 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSSM</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="c1">// Get an instance of the SSM Provider</span>
-<span class="hll">    <span class="n">SSMProvider</span> <span class="n">ssmProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSSM</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Get an instance of the SSM Provider</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">SSMProvider</span><span class="w"> </span><span class="n">ssmProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">();</span><span class="w"></span>
 </span>
-    <span class="c1">// Retrieve a single parameter</span>
-    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve a single parameter</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Retrieve multiple parameters from a path prefix</span>
-    <span class="c1">// This returns a Map with the parameter name as key</span>
-    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve multiple parameters from a path prefix</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// This returns a Map with the parameter name as key</span><span class="w"></span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -896,24 +894,23 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSSM</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-<span class="hll">    <span class="n">SsmClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">SsmClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-</span>    <span class="c1">// Get an instance of the SSM Provider</span>
-<span class="hll">    <span class="n">SSMProvider</span> <span class="n">ssmProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSSM</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">SsmClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SsmClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">    </span><span class="c1">// Get an instance of the SSM Provider</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">SSMProvider</span><span class="w"> </span><span class="n">ssmProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span><span class="w"></span>
 </span>
-    <span class="c1">// Retrieve a single parameter</span>
-    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve a single parameter</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span><span class="w"></span>
 
-    <span class="c1">// Retrieve multiple parameters from a path prefix</span>
-    <span class="c1">// This returns a Map with the parameter name as key</span>
-    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve multiple parameters from a path prefix</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// This returns a Map with the parameter name as key</span><span class="w"></span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -944,7 +941,7 @@ in order to get data from other regions or use specific credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AppWithSSM.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -957,22 +954,21 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SSMProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSSM</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="c1">// Get an instance of the SSM Provider</span>
-    <span class="n">SSMProvider</span> <span class="n">ssmProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSSM</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Get an instance of the SSM Provider</span><span class="w"></span>
+<span class="w">    </span><span class="n">SSMProvider</span><span class="w"> </span><span class="n">ssmProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSsmProvider</span><span class="p">();</span><span class="w"></span>
 
-    <span class="c1">// Retrieve a single parameter and decrypt it</span>
-<span class="hll">    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">withDecryption</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve a single parameter and decrypt it</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">withDecryption</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter&quot;</span><span class="p">);</span><span class="w"></span>
 </span>
-    <span class="c1">// Retrieve multiple parameters recursively from a path prefix</span>
-<span class="hll">    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">ssmProvider</span><span class="p">.</span><span class="na">recursive</span><span class="p">().</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve multiple parameters recursively from a path prefix</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssmProvider</span><span class="p">.</span><span class="na">recursive</span><span class="p">().</span><span class="na">getMultiple</span><span class="p">(</span><span class="s">&quot;/my/path/prefix&quot;</span><span class="p">);</span><span class="w"></span>
 </span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -983,7 +979,7 @@ in order to get data from other regions or use specific credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">SecretsProvider</label><label for="__tabbed_4_2">SecretsProvider with an explicit region</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -993,22 +989,21 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSecrets</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="c1">// Get an instance of the Secrets Provider</span>
-    <span class="n">SecretsProvider</span> <span class="n">secretsProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSecrets</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Get an instance of the Secrets Provider</span><span class="w"></span>
+<span class="w">    </span><span class="n">SecretsProvider</span><span class="w"> </span><span class="n">secretsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">();</span><span class="w"></span>
 
-    <span class="c1">// Retrieve a single secret</span>
-<span class="hll">    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve a single secret</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span><span class="w"></span>
 </span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1019,20 +1014,19 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSecrets</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-<span class="hll">    <span class="n">SecretsManagerClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">SecretsManagerClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-</span>    <span class="c1">// Get an instance of the Secrets Provider</span>
-<span class="hll">    <span class="n">SecretsProvider</span> <span class="n">secretsProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSecrets</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">SecretsManagerClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretsManagerClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">    </span><span class="c1">// Get an instance of the Secrets Provider</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">SecretsProvider</span><span class="w"> </span><span class="n">secretsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span><span class="w"></span>
 </span>
-    <span class="c1">// Retrieve a single secret</span>
-    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Retrieve a single secret</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1044,7 +1038,7 @@ in order to get data from other regions or use specific credentials.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Provider with default Max age</label><label for="__tabbed_5_2">Provider with age for each param</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1054,22 +1048,21 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSecrets</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="c1">// Get an instance of the Secrets Provider</span>
-    <span class="n">SecretsProvider</span> <span class="n">secretsProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">()</span>
-                                                  <span class="p">.</span><span class="na">defaultMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">ChronoUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSecrets</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Get an instance of the Secrets Provider</span><span class="w"></span>
+<span class="w">    </span><span class="n">SecretsProvider</span><span class="w"> </span><span class="n">secretsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">()</span><span class="w"></span>
+<span class="w">                                                  </span><span class="p">.</span><span class="na">defaultMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">ChronoUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span><span class="w"></span>
 
-<span class="hll">    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">secretsProvider</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span><span class="w"></span>
 </span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1079,19 +1072,18 @@ in order to get data from other regions or use specific credentials.</p>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.SecretsProvider</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.parameters.ParamManager</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithSecrets</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="n">SecretsManagerClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">SecretsManagerClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithSecrets</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">SecretsManagerClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretsManagerClient</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">region</span><span class="p">(</span><span class="n">Region</span><span class="p">.</span><span class="na">EU_CENTRAL_1</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
 
-    <span class="n">SecretsProvider</span> <span class="n">secretsProvider</span> <span class="o">=</span> <span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
+<span class="w">    </span><span class="n">SecretsProvider</span><span class="w"> </span><span class="n">secretsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getSecretsProvider</span><span class="p">(</span><span class="n">client</span><span class="p">);</span><span class="w"></span>
 <span class="hll">
-</span>    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">secretsProvider</span><span class="p">.</span><span class="na">withMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">ChronoUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span>
+</span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">secretsProvider</span><span class="p">.</span><span class="na">withMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">ChronoUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/secret&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1104,22 +1096,20 @@ Base64 and JSON transformations are provided. For more complex transformation, y
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Base64 Transformation</label><label for="__tabbed_6_2">Complex Transformation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>   <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">provider</span>
-                    <span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">Transformer</span><span class="p">.</span><span class="na">base64</span><span class="p">)</span>
-                    <span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/b64&quot;</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">Transformer</span><span class="p">.</span><span class="na">base64</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/b64&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>   <span class="n">MyObj</span> <span class="n">object</span> <span class="o">=</span> <span class="n">provider</span>
-                    <span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">Transformer</span><span class="p">.</span><span class="na">json</span><span class="p">)</span>
-                    <span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/json&quot;</span><span class="p">,</span> <span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">   </span><span class="n">MyObj</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">Transformer</span><span class="p">.</span><span class="na">json</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1129,7 +1119,7 @@ For example, if you wish to deserialize XML into an object.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">XmlTransformer.java</label><label for="__tabbed_7_2">Using XmlTransformer</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1141,30 +1131,28 @@ For example, if you wish to deserialize XML into an object.</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">XmlTransformer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Transformer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">XmlTransformer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Transformer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 </span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">XmlMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">XmlMapper</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">XmlMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">XmlMapper</span><span class="p">();</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">T</span> <span class="nf">applyTransformation</span><span class="p">(</span><span class="n">String</span> <span class="n">value</span><span class="p">,</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">targetClass</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">TransformationException</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">targetClass</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">TransformationException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">applyTransformation</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">targetClass</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">TransformationException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">targetClass</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TransformationException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">MyObj</span> <span class="n">object</span> <span class="o">=</span> <span class="n">provider</span>
-                        <span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">XmlTransformer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-                        <span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/xml&quot;</span><span class="p">,</span> <span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">MyObj</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="w"></span>
+<span class="w">                        </span><span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">XmlTransformer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/parameter/xml&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1173,19 +1161,18 @@ For example, if you wish to deserialize XML into an object.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Fluent API call</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">ssmProvider</span>
-      <span class="p">.</span><span class="na">defaultMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">SECONDS</span><span class="p">)</span>     <span class="c1">// will set 10 seconds as the default cache TTL</span>
-      <span class="p">.</span><span class="na">withMaxAge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MINUTES</span><span class="p">)</span>         <span class="c1">// will set the cache TTL for this value at 1 minute</span>
-      <span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>       <span class="c1">// json is a static import from Transformer.json</span>
-      <span class="p">.</span><span class="na">withDecryption</span><span class="p">()</span>               <span class="c1">// enable decryption of the parameter value</span>
-      <span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/param&quot;</span><span class="p">,</span> <span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span> <span class="c1">// finally get the value</span>
-</code></pre></div>
-</td></tr></table>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">ssmProvider</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">defaultMaxAge</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">SECONDS</span><span class="p">)</span><span class="w">     </span><span class="c1">// will set 10 seconds as the default cache TTL</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">withMaxAge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MINUTES</span><span class="p">)</span><span class="w">         </span><span class="c1">// will set the cache TTL for this value at 1 minute</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">withTransformation</span><span class="p">(</span><span class="n">json</span><span class="p">)</span><span class="w">       </span><span class="c1">// json is a static import from Transformer.json</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">withDecryption</span><span class="p">()</span><span class="w">               </span><span class="c1">// enable decryption of the parameter value</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/my/param&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MyObj</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"> </span><span class="c1">// finally get the value</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1195,7 +1182,7 @@ For example, if you wish to deserialize XML into an object.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Example implementation using S3 as a custom parameter</label><label for="__tabbed_9_2">Using custom parameter store</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1248,75 +1235,73 @@ For example, if you wish to deserialize XML into an object.</p>
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">S3Provider</span> <span class="kd">extends</span> <span class="n">BaseProvider</span> <span class="p">{</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">S3Provider</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseProvider</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">S3Client</span> <span class="n">client</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">bucket</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">S3Client</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">bucket</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">S3Provider</span><span class="p">(</span><span class="n">CacheManager</span> <span class="n">cacheManager</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">(</span><span class="n">cacheManager</span><span class="p">,</span> <span class="n">S3Client</span><span class="p">.</span><span class="na">create</span><span class="p">());</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">S3Provider</span><span class="p">(</span><span class="n">CacheManager</span><span class="w"> </span><span class="n">cacheManager</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">cacheManager</span><span class="p">,</span><span class="w"> </span><span class="n">S3Client</span><span class="p">.</span><span class="na">create</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="n">S3Provider</span><span class="p">(</span><span class="n">CacheManager</span> <span class="n">cacheManager</span><span class="p">,</span> <span class="n">S3Client</span> <span class="n">client</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">(</span><span class="n">cacheManager</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">client</span> <span class="o">=</span> <span class="n">client</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="n">S3Provider</span><span class="p">(</span><span class="n">CacheManager</span><span class="w"> </span><span class="n">cacheManager</span><span class="p">,</span><span class="w"> </span><span class="n">S3Client</span><span class="w"> </span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">cacheManager</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="n">S3Provider</span> <span class="nf">withBucket</span><span class="p">(</span><span class="n">String</span> <span class="n">bucket</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">bucket</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">;</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">S3Provider</span><span class="w"> </span><span class="nf">withBucket</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">bucket</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getValue</span><span class="p">(</span><span class="n">String</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">bucket</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;A bucket must be specified, using withBucket() method&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getValue</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bucket</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;A bucket must be specified, using withBucket() method&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
 
-        <span class="n">GetObjectRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">GetObjectRequest</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">bucket</span><span class="p">(</span><span class="n">bucket</span><span class="p">).</span><span class="na">key</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-        <span class="n">ResponseBytes</span><span class="o">&lt;</span><span class="n">GetObjectResponse</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">getObject</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">ResponseTransformer</span><span class="p">.</span><span class="na">toBytes</span><span class="p">());</span>
-        <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="na">asUtf8String</span><span class="p">();</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="n">GetObjectRequest</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetObjectRequest</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">bucket</span><span class="p">(</span><span class="n">bucket</span><span class="p">).</span><span class="na">key</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">ResponseBytes</span><span class="o">&lt;</span><span class="n">GetObjectResponse</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">getObject</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">ResponseTransformer</span><span class="p">.</span><span class="na">toBytes</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">asUtf8String</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">getMultipleValues</span><span class="p">(</span><span class="n">String</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">bucket</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;A bucket must be specified, using withBucket() method&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getMultipleValues</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bucket</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;A bucket must be specified, using withBucket() method&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
 
-        <span class="n">ListObjectsV2Request</span> <span class="n">listRequest</span> <span class="o">=</span> <span class="n">ListObjectsV2Request</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">bucket</span><span class="p">(</span><span class="n">bucket</span><span class="p">).</span><span class="na">prefix</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">S3Object</span><span class="o">&gt;</span> <span class="n">s3Objects</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="na">listObjectsV2</span><span class="p">(</span><span class="n">listRequest</span><span class="p">).</span><span class="na">contents</span><span class="p">();</span>
+<span class="w">        </span><span class="n">ListObjectsV2Request</span><span class="w"> </span><span class="n">listRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ListObjectsV2Request</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">bucket</span><span class="p">(</span><span class="n">bucket</span><span class="p">).</span><span class="na">prefix</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">S3Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s3Objects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">listObjectsV2</span><span class="p">(</span><span class="n">listRequest</span><span class="p">).</span><span class="na">contents</span><span class="p">();</span><span class="w"></span>
 
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="n">s3Objects</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">s3Object</span> <span class="o">-&gt;</span> <span class="p">{</span>
-            <span class="n">result</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">s3Object</span><span class="p">.</span><span class="na">key</span><span class="p">(),</span> <span class="n">getValue</span><span class="p">(</span><span class="n">s3Object</span><span class="p">.</span><span class="na">key</span><span class="p">()));</span>
-        <span class="p">});</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">s3Objects</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">s3Object</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">result</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">s3Object</span><span class="p">.</span><span class="na">key</span><span class="p">(),</span><span class="w"> </span><span class="n">getValue</span><span class="p">(</span><span class="n">s3Object</span><span class="p">.</span><span class="na">key</span><span class="p">()));</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 
-        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">resetToDefaults</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">super</span><span class="p">.</span><span class="na">resetToDefaults</span><span class="p">();</span>
-        <span class="n">bucket</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">resetToDefaults</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">resetToDefaults</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">S3Provider</span> <span class="n">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">S3Provider</span><span class="p">(</span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getCacheManager</span><span class="p">());</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">S3Provider</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">S3Provider</span><span class="p">(</span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getCacheManager</span><span class="p">());</span><span class="w"></span>
 
-<span class="hll">    <span class="n">provider</span><span class="p">.</span><span class="na">setTransformationManager</span><span class="p">(</span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getTransformationManager</span><span class="p">());</span>
+<span class="hll"><span class="w">    </span><span class="n">provider</span><span class="p">.</span><span class="na">setTransformationManager</span><span class="p">(</span><span class="n">ParamManager</span><span class="p">.</span><span class="na">getTransformationManager</span><span class="p">());</span><span class="w"></span>
 </span>
-    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">provider</span><span class="p">.</span><span class="na">withBucket</span><span class="p">(</span><span class="s">&quot;myBucket&quot;</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">provider</span><span class="p">.</span><span class="na">withBucket</span><span class="p">(</span><span class="s">&quot;myBucket&quot;</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;myKey&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1327,34 +1312,32 @@ You could specify a different provider as long as it extends <code>BaseProvider<
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Param Annotation</label><label for="__tabbed_10_2">Custom Provider Usage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithAnnotation</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithAnnotation</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Param</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s">&quot;/my/parameter/json&quot;</span><span class="p">)</span>
-</span>    <span class="n">ObjectToDeserialize</span> <span class="n">value</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nd">@Param</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/my/parameter/json&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="n">ObjectToDeserialize</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppWithAnnotation</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppWithAnnotation</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Param</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s">&quot;/my/parameter/json&quot;</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">SecretsProvider</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">transformer</span> <span class="o">=</span> <span class="n">JsonTransformer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-</span>    <span class="n">ObjectToDeserialize</span> <span class="n">value</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nd">@Param</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/my/parameter/json&quot;</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretsProvider</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">transformer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonTransformer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="n">ObjectToDeserialize</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <p>In this case <code>SecretsProvider</code> will be used to retrieve a raw value that is then trasformed into the target Object by using <code>JsonTransformer</code>.
 To show the convenience of the annotation compare the following two code snippets.</p>
 </div>
@@ -1365,7 +1348,7 @@ To show the convenience of the annotation compare the following two code snippet
 <div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Maven</label><label for="__tabbed_11_2">Gradle</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1392,7 +1375,7 @@ To show the convenience of the annotation compare the following two code snippet
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;build&gt;</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;build&gt;</span>
     <span class="nt">&lt;plugins&gt;</span>
         ...
         <span class="nt">&lt;plugin&gt;</span>
@@ -1420,11 +1403,10 @@ To show the convenience of the annotation compare the following two code snippet
         ...
     <span class="nt">&lt;/plugins&gt;</span>
 <span class="nt">&lt;/build&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1436,27 +1418,29 @@ To show the convenience of the annotation compare the following two code snippet
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">plugins</span><span class="o">{</span>
-    <span class="n">id</span> <span class="s1">&#39;java&#39;</span>
-    <span class="n">id</span> <span class="s1">&#39;io.freefair.aspectj.post-compile-weaving&#39;</span> <span class="n">version</span> <span class="s1">&#39;6.3.0&#39;</span>
-<span class="o">}</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">plugins</span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;java&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;io.freefair.aspectj.post-compile-weaving&#39;</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s1">&#39;6.3.0&#39;</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 
-<span class="n">repositories</span> <span class="o">{</span>
-    <span class="n">mavenCentral</span><span class="o">()</span>
-<span class="o">}</span>
+<span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 
-<span class="n">dependencies</span> <span class="o">{</span>
-    <span class="o">...</span>
-    <span class="n">aspect</span> <span class="s1">&#39;software.amazon.lambda:powertools-parameters:1.12.2&#39;</span>
-<span class="o">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">aspect</span><span class="w"> </span><span class="s1">&#39;software.amazon.lambda:powertools-parameters:1.12.3&#39;</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 
               
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -1464,7 +1448,8 @@ To show the convenience of the annotation compare the following two code snippet
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../idempotency/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Idempotency" rel="prev">
@@ -1523,10 +1508,10 @@ To show the convenience of the annotation compare the following two code snippet
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       

@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -481,7 +482,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -753,7 +754,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">log4j2.xml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -768,7 +769,7 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;Configuration&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
         <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
@@ -784,8 +785,7 @@
         <span class="nt">&lt;/Root&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -793,7 +793,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">template.yaml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -802,7 +802,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">HelloWorldFunction</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::Serverless::Function</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Properties</span><span class="p">:</span><span class="w"></span>
@@ -812,8 +812,7 @@
 <span class="w">            </span><span class="nt">Variables</span><span class="p">:</span><span class="w"></span>
 <span class="hll"><span class="w">                </span><span class="nt">POWERTOOLS_LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DEBUG</span><span class="w"></span>
 </span><span class="hll"><span class="w">                </span><span class="nt">POWERTOOLS_SERVICE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span><span class="w"></span>
-</span></code></pre></div>
-</td></tr></table>
+</span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -915,7 +914,7 @@ to customise what is logged.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">App.java</label><label for="__tabbed_3_2">AppLogEvent.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -932,29 +931,28 @@ to customise what is logged.</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.logging.LoggingUtils</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.logging.Logging</span><span class="p">;</span>
-<span class="p">...</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.LogManager</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.logging.log4j.Logger</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.logging.LoggingUtils</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.logging.Logging</span><span class="p">;</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-     <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -965,20 +963,19 @@ to customise what is logged.</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppLogEvent</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppLogEvent</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-     <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -990,11 +987,10 @@ If you need to customize format and timezone, you can do so by configuring <code
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">log4j2.component.properties</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="na">log4j.layout.jsonTemplate.timestampFormatPattern</span><span class="o">=</span><span class="s">yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZz</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="na">log4j.layout.jsonTemplate.timestampFormatPattern</span><span class="o">=</span><span class="s">yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZz</span><span class="w"></span>
 </span><span class="hll"><span class="na">log4j.layout.jsonTemplate.timeZone</span><span class="o">=</span><span class="s">Europe/Oslo</span><span class="w"></span>
-</span></code></pre></div>
-</td></tr></table>
+</span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1008,7 +1004,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">log4j2.xml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1023,7 +1019,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;Configuration&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
         <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
@@ -1039,8 +1035,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
         <span class="nt">&lt;/Root&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1049,7 +1044,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">App.java</label><label for="__tabbed_6_2">Example Event</label><label for="__tabbed_6_3">Example CloudWatch Logs excerpt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1062,38 +1057,36 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span><span class="p">(</span><span class="n">correlationIdPath</span> <span class="o">=</span> <span class="s">&quot;/headers/my_request_id_header&quot;</span><span class="p">)</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">)</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">correlationIdPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/headers/my_request_id_header&quot;</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;my_request_id_header&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;correlation_id_value&quot;</span><span class="w"></span>
 </span><span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1104,7 +1097,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1116,8 +1109,7 @@ The field emitted in logs will follow specs from <a href="https://www.elastic.co
 <span class="w">    </span><span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;correlation_id_value&quot;</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1126,7 +1118,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">App.java</label><label for="__tabbed_7_2">Example Event</label><label for="__tabbed_7_3">Example CloudWatch Logs excerpt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1141,40 +1133,38 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">software.amazon.lambda.powertools.logging.CorrelationIdPathConstants</span><span class="p">;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.logging.CorrelationIdPathConstants</span><span class="p">;</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span><span class="p">(</span><span class="n">correlationIdPath</span> <span class="o">=</span> <span class="n">CorrelationIdPathConstants</span><span class="p">.</span><span class="na">API_GATEWAY_REST</span><span class="p">)</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">)</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">correlationIdPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CorrelationIdPathConstants</span><span class="p">.</span><span class="na">API_GATEWAY_REST</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;requestContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;requestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;correlation_id_value&quot;</span><span class="w"></span>
 </span><span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1185,7 +1175,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1197,8 +1187,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <span class="w">    </span><span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;correlation_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;correlation_id_value&quot;</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1211,7 +1200,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1232,30 +1221,29 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-    <span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-<span class="hll">        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;willBeLogged&quot;</span><span class="p">);</span>
-</span>        <span class="p">...</span>
+<span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;willBeLogged&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">...</span><span class="w"></span>
 
-        <span class="p">...</span>
-         <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customKeys</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-         <span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">);</span>
-         <span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span> <span class="s">&quot;value1&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">         </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value1&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="hll">         <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKeys</span><span class="p">(</span><span class="n">customKeys</span><span class="p">);</span>
-</span>        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">         </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKeys</span><span class="p">(</span><span class="n">customKeys</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1264,7 +1252,7 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1286,31 +1274,30 @@ for known event sources, where either a request ID or X-Ray Trace ID are present
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-    <span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;willBeLogged&quot;</span><span class="p">);</span>
-        <span class="p">...</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customKeys</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">);</span>
-        <span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test2&quot;</span><span class="p">,</span> <span class="s">&quot;value1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;willBeLogged&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">customKeys</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;test2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value1&quot;</span><span class="p">);</span><span class="w"></span>
 
-        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKeys</span><span class="p">(</span><span class="n">customKeys</span><span class="p">);</span>
-        <span class="p">...</span>
-<span class="hll">        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">removeKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
-</span><span class="hll">        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">removeKeys</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span> <span class="s">&quot;test2&quot;</span><span class="p">);</span>
-</span>        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKeys</span><span class="p">(</span><span class="n">customKeys</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">removeKey</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">removeKeys</span><span class="p">(</span><span class="s">&quot;test1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test2&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1321,7 +1308,7 @@ this means that custom keys can be persisted across invocations. If you want all
 <div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">App.java</label><label for="__tabbed_10_2">#1 Request</label><label for="__tabbed_10_3">#2 Request</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1338,29 +1325,28 @@ this means that custom keys can be persisted across invocations. If you want all
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span><span class="p">(</span><span class="n">clearState</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="na">getHeaders</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;someSpecialHeader&quot;</span><span class="p">))</span> <span class="p">{</span>
-<span class="hll">            <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;specialKey&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">);</span>
-</span>        <span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">clearState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="na">getHeaders</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;someSpecialHeader&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">appendKey</span><span class="p">(</span><span class="s">&quot;specialKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">}</span><span class="w"></span>
 
-        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">);</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Collecting payment&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1371,7 +1357,7 @@ this means that custom keys can be persisted across invocations. If you want all
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1383,11 +1369,10 @@ this means that custom keys can be persisted across invocations. If you want all
 <span class="w">    </span><span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="nt">&quot;specialKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1397,7 +1382,7 @@ this means that custom keys can be persisted across invocations. If you want all
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collecting payment&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-03 11:47:12,494+0200&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1408,8 +1393,7 @@ this means that custom keys can be persisted across invocations. If you want all
 <span class="w">    </span><span class="nt">&quot;functionArn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:lambda:eu-west-1:12345678910:function:test&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;lambda_request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52fdfc07-2182-154f-163f-5f0f9a621d72&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1420,7 +1404,7 @@ specific fields from received event due to security.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">App.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1436,25 +1420,24 @@ specific fields from received event due to security.</p>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-    <span class="kd">static</span> <span class="p">{</span>
-<span class="hll">        <span class="n">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectMapper</span><span class="p">();</span>
-</span><span class="hll">        <span class="n">LoggingUtils</span><span class="p">.</span><span class="na">defaultObjectMapper</span><span class="p">(</span><span class="n">objectMapper</span><span class="p">);</span>
-</span>    <span class="p">}</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">objectMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">LoggingUtils</span><span class="p">.</span><span class="na">defaultObjectMapper</span><span class="p">(</span><span class="n">objectMapper</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">logEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1468,7 +1451,7 @@ via <code>samplingRate</code> attribute on annotation. </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Sampling via annotation attribute</label><label for="__tabbed_12_2">Sampling via environment variable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1479,23 +1462,22 @@ via <code>samplingRate</code> attribute on annotation. </p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Handler for requests to Lambda function.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">App</span> <span class="kd">implements</span> <span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span> <span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="n">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Logger</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogManager</span><span class="p">.</span><span class="na">getLogger</span><span class="p">();</span><span class="w"></span>
 
-<span class="hll">    <span class="nd">@Logging</span><span class="p">(</span><span class="n">samplingRate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
-</span>    <span class="kd">public</span> <span class="n">APIGatewayProxyResponseEvent</span> <span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span> <span class="n">APIGatewayProxyRequestEvent</span> <span class="n">input</span><span class="p">,</span> <span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-     <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<span class="hll"><span class="w">    </span><span class="nd">@Logging</span><span class="p">(</span><span class="n">samplingRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"></span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1503,7 +1485,7 @@ via <code>samplingRate</code> attribute on annotation. </p>
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">Resources</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">HelloWorldFunction</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::Serverless::Function</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Properties</span><span class="p">:</span><span class="w"></span>
@@ -1512,8 +1494,7 @@ via <code>samplingRate</code> attribute on annotation. </p>
 <span class="w">        </span><span class="nt">Environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">            </span><span class="nt">Variables</span><span class="p">:</span><span class="w"></span>
 <span class="hll"><span class="w">                </span><span class="nt">POWERTOOLS_LOGGER_SAMPLE_RATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"></span>
-</span></code></pre></div>
-</td></tr></table>
+</span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1524,7 +1505,7 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Deprecated configuration of log4j2.xml</label><label for="__tabbed_13_2">New configuration of log4j2.xml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1539,7 +1520,7 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;Configuration&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
         <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
@@ -1555,11 +1536,10 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
         <span class="nt">&lt;/Root&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1574,7 +1554,7 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;Configuration&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
         <span class="nt">&lt;Console</span> <span class="na">name=</span><span class="s">&quot;JsonAppender&quot;</span> <span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
@@ -1590,14 +1570,16 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
         <span class="nt">&lt;/Root&gt;</span>
     <span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 
               
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -1605,7 +1587,8 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../FAQs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQs" rel="prev">
@@ -1664,10 +1647,10 @@ deprecated now and will be removed in future version. Switching to <code>JsonTem
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
