@@ -12,8 +12,14 @@
         <meta name="author" content="Amazon Web Services">
       
       
+      
+        <link rel="prev" href="../batch/">
+      
+      
+        <link rel="next" href="../custom_resources/">
+      
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0b4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -21,11 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.91872f81.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -56,6 +61,8 @@
     
     
       
+    
+    
     
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
@@ -157,7 +164,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -281,17 +288,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Core utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Core utilities" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Core utilities
@@ -361,17 +371,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Utilities" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Utilities
@@ -443,7 +454,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
@@ -674,10 +685,9 @@
                 
                   
 
-  <a href="https://github.com/awslabs/aws-lambda-powertools-java/edit/master/docs/utilities/validation.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
   <h1>Validation</h1>
@@ -735,41 +745,41 @@
 <span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;dependencies&gt;</span>
 ...
 <span class="hll"><span class="nt">&lt;dependency&gt;</span>
-</span><span class="hll">    <span class="nt">&lt;groupId&gt;</span>com.amazonaws<span class="nt">&lt;/groupId&gt;</span>
-</span><span class="hll">    <span class="nt">&lt;artifactId&gt;</span>powertools-validation<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">    <span class="nt">&lt;version&gt;</span>1.13.0<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.amazonaws<span class="nt">&lt;/groupId&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>powertools-validation<span class="nt">&lt;/artifactId&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.14.0<span class="nt">&lt;/version&gt;</span>
 </span><span class="hll"><span class="nt">&lt;/dependency&gt;</span>
 </span>...
 <span class="nt">&lt;/dependencies&gt;</span>
 <span class="cm">&lt;!-- configure the aspectj-maven-plugin to compile-time weave (CTW) the aws-lambda-powertools-java aspects into your project --&gt;</span>
 <span class="nt">&lt;build&gt;</span>
-    <span class="nt">&lt;plugins&gt;</span>
-        ...
-<span class="hll">        <span class="nt">&lt;plugin&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;artifactId&gt;</span>aspectj-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;version&gt;</span>1.14.0<span class="nt">&lt;/version&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;configuration&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;complianceLevel&gt;</span>1.8<span class="nt">&lt;/complianceLevel&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;aspectLibraries&gt;</span>
-</span><span class="hll">                     <span class="nt">&lt;aspectLibrary&gt;</span>
-</span><span class="hll">                         <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
-</span><span class="hll">                         <span class="nt">&lt;artifactId&gt;</span>powertools-validation<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class="hll">                     <span class="nt">&lt;/aspectLibrary&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;/aspectLibraries&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;/configuration&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;executions&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;execution&gt;</span>
-</span><span class="hll">                     <span class="nt">&lt;goals&gt;</span>
-</span><span class="hll">                         <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
-</span><span class="hll">                     <span class="nt">&lt;/goals&gt;</span>
-</span><span class="hll">                 <span class="nt">&lt;/execution&gt;</span>
-</span><span class="hll">             <span class="nt">&lt;/executions&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;/plugin&gt;</span>
-</span>        ...
-    <span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">        </span>...
+<span class="hll"><span class="w">        </span><span class="nt">&lt;plugin&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;artifactId&gt;</span>aspectj-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;version&gt;</span>1.14.0<span class="nt">&lt;/version&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;configuration&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;complianceLevel&gt;</span>1.8<span class="nt">&lt;/complianceLevel&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;aspectLibraries&gt;</span>
+</span><span class="hll"><span class="w">                     </span><span class="nt">&lt;aspectLibrary&gt;</span>
+</span><span class="hll"><span class="w">                         </span><span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
+</span><span class="hll"><span class="w">                         </span><span class="nt">&lt;artifactId&gt;</span>powertools-validation<span class="nt">&lt;/artifactId&gt;</span>
+</span><span class="hll"><span class="w">                     </span><span class="nt">&lt;/aspectLibrary&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;/aspectLibraries&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;/configuration&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;executions&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;execution&gt;</span>
+</span><span class="hll"><span class="w">                     </span><span class="nt">&lt;goals&gt;</span>
+</span><span class="hll"><span class="w">                         </span><span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+</span><span class="hll"><span class="w">                     </span><span class="nt">&lt;/goals&gt;</span>
+</span><span class="hll"><span class="w">                 </span><span class="nt">&lt;/execution&gt;</span>
+</span><span class="hll"><span class="w">             </span><span class="nt">&lt;/executions&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&lt;/plugin&gt;</span>
+</span><span class="w">        </span>...
+<span class="w">    </span><span class="nt">&lt;/plugins&gt;</span>
 <span class="nt">&lt;/build&gt;</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -785,18 +795,18 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">plugins</span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;java&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;io.freefair.aspectj.post-compile-weaving&#39;</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s1">&#39;6.3.0&#39;</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">plugins</span><span class="o">{</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;java&#39;</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;io.freefair.aspectj.post-compile-weaving&#39;</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s1">&#39;6.3.0&#39;</span>
+<span class="o">}</span>
 
-<span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span>
+<span class="o">}</span>
 
-<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">aspect</span><span class="w"> </span><span class="s1">&#39;software.amazon.lambda:powertools-validation:1.13.0&#39;</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">aspect</span><span class="w"> </span><span class="s1">&#39;software.amazon.lambda:powertools-validation:1.14.0&#39;</span>
+<span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -822,17 +832,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFunctionHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFunctionHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/schema_in.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">outboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/schema_out.json&quot;</span><span class="p">)</span><span class="w"></span>
-</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">something</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="hll"><span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/schema_in.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">outboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/schema_out.json&quot;</span><span class="p">)</span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">something</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -860,23 +870,23 @@
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationUtils.*</span><span class="p">;</span><span class="w"></span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import static</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationUtils.*</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFunctionHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFunctionHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">APIGatewayProxyRequestEvent</span><span class="p">,</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="hll"><span class="w">            </span><span class="n">validate</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ValidationException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// do something before throwing it</span><span class="w"></span>
-<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">ex</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">APIGatewayProxyResponseEvent</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">APIGatewayProxyRequestEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">            </span><span class="n">validate</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">);</span>
+</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ValidationException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// do something before throwing it</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">ex</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">something</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">something</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1015,17 +1025,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyCustomEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyCustomEvent</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyCustomEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyCustomEvent</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/my_custom_event_schema.json&quot;</span><span class="p">,</span><span class="w"></span>
-</span><span class="hll"><span class="w">                </span><span class="n">envelope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;basket.products[*]&quot;</span><span class="p">)</span><span class="w"></span>
-</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyCustomEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="hll"><span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;classpath:/my_custom_event_schema.json&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">                </span><span class="n">envelope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;basket.products[*]&quot;</span><span class="p">)</span>
+</span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyCustomEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1044,22 +1054,22 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;basket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;products&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43242</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FooBar XY&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">258</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">765</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarBaz AB&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">43.99</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;basket&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;products&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43242</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FooBar XY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">258</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">765</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarBaz AB&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">43.99</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1089,22 +1099,22 @@ You can use the <code>ValidationConfig</code> to change that behaviour.</p>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationConfig</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span><span class="w"></span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationConfig</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span>
 
-<span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="n">ValidationConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setSchemaVersion</span><span class="p">(</span><span class="n">SpecVersion</span><span class="p">.</span><span class="na">VersionFlag</span><span class="p">.</span><span class="na">V4</span><span class="p">);</span><span class="w"></span>
-</span><span class="p">}</span><span class="w"></span>
+<span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">ValidationConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">setSchemaVersion</span><span class="p">(</span><span class="n">SpecVersion</span><span class="p">.</span><span class="na">VersionFlag</span><span class="p">.</span><span class="na">V4</span><span class="p">);</span>
+</span><span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyXMLEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyEventWithXML</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyXMLEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyEventWithXML</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="o">=</span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">envelope</span><span class="o">=</span><span class="s">&quot;powertools_xml(path.to.xml_data)&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyEventWithXML</span><span class="w"> </span><span class="n">myEvent</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="o">=</span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">envelope</span><span class="o">=</span><span class="s">&quot;powertools_xml(path.to.xml_data)&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyEventWithXML</span><span class="w"> </span><span class="n">myEvent</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1130,23 +1140,23 @@ You can use the <code>ValidationConfig</code> to change that behaviour.</p>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationConfig</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span><span class="w"></span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.ValidationConfig</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">software.amazon.lambda.powertools.validation.Validation</span><span class="p">;</span>
 
-<span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">objectMapper</span><span class="o">=</span><span class="w"> </span><span class="n">ValidationConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getObjectMapper</span><span class="p">();</span><span class="w"></span>
-</span><span class="hll"><span class="w">    </span><span class="c1">// update (de)serializationConfig or other properties</span><span class="w"></span>
-</span><span class="p">}</span><span class="w"></span>
+<span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">objectMapper</span><span class="o">=</span><span class="w"> </span><span class="n">ValidationConfig</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getObjectMapper</span><span class="p">();</span>
+</span><span class="hll"><span class="w">    </span><span class="c1">// update (de)serializationConfig or other properties</span>
+</span><span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyXMLEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyEventWithXML</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyXMLEventHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RequestHandler</span><span class="o">&lt;</span><span class="n">MyEventWithXML</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="o">=</span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">envelope</span><span class="o">=</span><span class="s">&quot;powertools_xml(path.to.xml_data)&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyEventWithXML</span><span class="w"> </span><span class="n">myEvent</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="nd">@Validation</span><span class="p">(</span><span class="n">inboundSchema</span><span class="o">=</span><span class="s">&quot;classpath:/schema.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">envelope</span><span class="o">=</span><span class="s">&quot;powertools_xml(path.to.xml_data)&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleRequest</span><span class="p">(</span><span class="n">MyEventWithXML</span><span class="w"> </span><span class="n">myEvent</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1194,16 +1204,15 @@ You can use the <code>ValidationConfig</code> to change that behaviour.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.3de43c86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ce0331ff.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
         <script src="../../javascript/aws-amplify.min.js"></script>
       
         <script src="../../javascript/extra.js"></script>
       
-    
     
   </body>
 </html>

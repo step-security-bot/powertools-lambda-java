@@ -12,8 +12,14 @@
         <meta name="author" content="Amazon Web Services">
       
       
+      
+        <link rel="prev" href="../changelog/">
+      
+      
+        <link rel="next" href="../core/logging/">
+      
       <link rel="icon" href="../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0b4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -21,11 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.91872f81.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -56,6 +61,8 @@
     
     
       
+    
+    
     
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
@@ -157,7 +164,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -264,7 +271,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
@@ -325,17 +332,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Core utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Core utilities" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Core utilities
@@ -403,17 +413,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Utilities" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Utilities
@@ -576,10 +589,9 @@
                 
                   
 
-  <a href="https://github.com/awslabs/aws-lambda-powertools-java/edit/master/docs/FAQs.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
   <h1>FAQs</h1>
@@ -601,18 +613,18 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="hll">    <span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span> 
-</span><span class="hll">    <span class="nt">&lt;sources/&gt;</span>
-</span><span class="hll">    <span class="nt">&lt;weaveDirectories&gt;</span>
-</span><span class="hll">        <span class="nt">&lt;weaveDirectory&gt;</span>${project.build.directory}/classes<span class="nt">&lt;/weaveDirectory&gt;</span>
-</span><span class="hll">    <span class="nt">&lt;/weaveDirectories&gt;</span>
-</span>    ...
-    <span class="nt">&lt;aspectLibraries&gt;</span>
-        <span class="nt">&lt;aspectLibrary&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>powertools-logging<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;/aspectLibrary&gt;</span>
-    <span class="nt">&lt;/aspectLibraries&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span><span class="w"> </span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;sources/&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;weaveDirectories&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&lt;weaveDirectory&gt;</span>${project.build.directory}/classes<span class="nt">&lt;/weaveDirectory&gt;</span>
+</span><span class="hll"><span class="w">    </span><span class="nt">&lt;/weaveDirectories&gt;</span>
+</span><span class="w">    </span>...
+<span class="w">    </span><span class="nt">&lt;aspectLibraries&gt;</span>
+<span class="w">        </span><span class="nt">&lt;aspectLibrary&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>powertools-logging<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/aspectLibrary&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/aspectLibraries&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="how-can-i-use-powertools-with-kotlin-projects">How can I use Powertools with Kotlin projects?<a class="headerlink" href="#how-can-i-use-powertools-with-kotlin-projects" title="Permanent link">&para;</a></h2>
@@ -629,14 +641,14 @@ No explicit configuration should be required for gradle projects. </p>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="hll">    <span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span> 
-</span>    ...
-    <span class="nt">&lt;aspectLibraries&gt;</span>
-        <span class="nt">&lt;aspectLibrary&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>powertools-logging<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;/aspectLibrary&gt;</span>
-    <span class="nt">&lt;/aspectLibraries&gt;</span>
+<span class="hll"><span class="w">    </span><span class="nt">&lt;forceAjcCompile&gt;</span>true<span class="nt">&lt;/forceAjcCompile&gt;</span><span class="w"> </span>
+</span><span class="w">    </span>...
+<span class="w">    </span><span class="nt">&lt;aspectLibraries&gt;</span>
+<span class="w">        </span><span class="nt">&lt;aspectLibrary&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>software.amazon.lambda<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>powertools-logging<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/aspectLibrary&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/aspectLibraries&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></div></td></tr></table></div>
 
@@ -682,16 +694,15 @@ No explicit configuration should be required for gradle projects. </p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.3de43c86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ce0331ff.min.js"></script>
+      <script src="../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
         <script src="../javascript/aws-amplify.min.js"></script>
       
         <script src="../javascript/extra.js"></script>
       
-    
     
   </body>
 </html>
