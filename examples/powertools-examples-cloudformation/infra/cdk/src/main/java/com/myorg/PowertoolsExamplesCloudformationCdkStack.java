@@ -50,7 +50,7 @@ public class PowertoolsExamplesCloudformationCdkStack extends Stack {
                 .runtime(Runtime.JAVA_11)
                 .code(Code.fromAsset("../../", AssetOptions.builder().bundling(bundlingOptions)
                         .build()))
-                .handler("helloworld.App")
+                .handler("helloworld.App::handleRequest")
                 .memorySize(512)
                 .timeout(Duration.seconds(20))
                 .environment(Map.ofEntries(entry("JAVA_TOOL_OPTIONS", "-XX:+TieredCompilation -XX:TieredStopAtLevel=1")))
