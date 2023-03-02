@@ -4,8 +4,9 @@ This project contains an example of Lambda function using the CloudFormation mod
 
 ## Deploy the sample application
 
-This sample is based on Serverless Application Model (SAM) and you can use the SAM Command Line Interface (SAM CLI) to build it and deploy it to AWS.
+This sample can be used either with the Serverless Application Model (SAM) or with CDK.
 
+### Deploy with SAM CLI
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
@@ -13,9 +14,27 @@ To use the SAM CLI, you need the following tools.
 * Maven - [Install Maven](https://maven.apache.org/install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-To build and deploy your application for the first time, run the following in your shell:
+To build and deploy this application for the first time, run the following in your shell:
 
 ```bash
+cd infra/sam
 sam build
 sam deploy --guided
+```
+
+### Deploy with CDK
+To use CDK you need the following tools.
+
+* CDK - [Install CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)
+* Java11 - [Install the Java 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
+* Maven - [Install Maven](https://maven.apache.org/install.html)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+
+To build and deploy this application for the first time, run the following in your shell:
+
+```bash
+cd infra/cdk
+mvn package
+cdk synth
+cdk deploy
 ```
