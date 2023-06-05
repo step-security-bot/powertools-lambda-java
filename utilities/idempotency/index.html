@@ -12,6 +12,8 @@
         <meta name="author" content="Amazon Web Services">
       
       
+        <link rel="canonical" href="https://docs.powertools.aws.dev/lambda-java/utilities/idempotency/">
+      
       
         <link rel="prev" href="../../core/metrics/">
       
@@ -19,18 +21,18 @@
         <link rel="next" href="../parameters/">
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Idempotency - AWS Lambda Powertools for Java</title>
+        <title>Idempotency - Powertools for AWS Lambda (Java)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -93,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -105,7 +107,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Java
+            Powertools for AWS Lambda (Java)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,12 +218,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Java
+    Powertools for AWS Lambda (Java)
   </label>
   
     <div class="md-nav__source">
@@ -1713,7 +1715,7 @@ estimate the cost.</p>
 </div>
 <h4 id="lambda-timeouts">Lambda timeouts<a class="headerlink" href="#lambda-timeouts" title="Permanent link">&para;</a></h4>
 <p>This is automatically done when you annotate your Lambda handler with <a href="#idempotent-annotation">@Idempotent annotation</a>.</p>
-<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/">Lambda function times out</a>, Powertools calculates and includes the remaining invocation available time as part of the idempotency record.</p>
+<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/">Lambda function times out</a>, Powertools for AWS Lambda (Java) calculates and includes the remaining invocation available time as part of the idempotency record.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>If a second invocation happens <strong>after</strong> this timestamp, and the record is marked as <code>INPROGRESS</code>, we will execute the invocation again as if it was in the <code>EXPIRED</code> state.
@@ -2376,8 +2378,8 @@ When enabled, we cache a maximum of 256 records in each Lambda execution environ
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition tip">
-<p class="admonition-title">Tip: JMESPath Powertools functions are also available</p>
-<p>Built-in functions like <code>powertools_json</code>, <code>powertools_base64</code>, <code>powertools_base64_gzip</code> are also available to use in this utility. See <a href="../serialization/">JMESPath Powertools functions</a></p>
+<p class="admonition-title">Tip: JMESPath Powertools for AWS Lambda (Java) functions are also available</p>
+<p>Built-in functions like <code>powertools_json</code>, <code>powertools_base64</code>, <code>powertools_base64_gzip</code> are also available to use in this utility. See <a href="../serialization/">JMESPath Powertools for AWS Lambda (Java) functions</a></p>
 </div>
 <h2 id="testing-your-code">Testing your code<a class="headerlink" href="#testing-your-code" title="Permanent link">&para;</a></h2>
 <p>The idempotency utility provides several routes to test your code.</p>
@@ -2857,7 +2859,7 @@ sam<span class="w"> </span><span class="nb">local</span><span class="w"> </span>
   <small>
     
       Last update:
-      2023-05-17
+      2023-06-05
     
   </small>
 </div>

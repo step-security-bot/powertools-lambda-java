@@ -12,6 +12,8 @@
         <meta name="author" content="Amazon Web Services">
       
       
+        <link rel="canonical" href="https://docs.powertools.aws.dev/lambda-java/utilities/custom_resources/">
+      
       
         <link rel="prev" href="../validation/">
       
@@ -19,18 +21,18 @@
         <link rel="next" href="../serialization/">
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Custom Resources - AWS Lambda Powertools for Java</title>
+        <title>Custom Resources - Powertools for AWS Lambda (Java)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -93,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -105,7 +107,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Java
+            Powertools for AWS Lambda (Java)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,12 +218,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Java
+    Powertools for AWS Lambda (Java)
   </label>
   
     <div class="md-nav__source">
@@ -933,7 +935,7 @@ If your code raises an exception (which is not handled), the <code>AbstractCusto
 - For CREATE operations, the <code>LogStreamName</code> from the Lambda context is used. 
 - For UPDATE and DELETE operations, the <code>physicalResourceId</code> provided in the <code>CloudFormationCustomResourceEvent</code> is used. </p>
 <h4 id="why-do-you-need-a-physicalresourceid">Why do you need a physicalResourceId?<a class="headerlink" href="#why-do-you-need-a-physicalresourceid" title="Permanent link">&para;</a></h4>
-<p>It is recommended that you always explicitly provide a <code>physicalResourceId</code> in your response rather than letting powertools generate if for you because <code>physicalResourceId</code> has a crucial role in the lifecycle of a CloudFormation custom resource.
+<p>It is recommended that you always explicitly provide a <code>physicalResourceId</code> in your response rather than letting Powertools for AWS Lambda (Java) generate if for you because <code>physicalResourceId</code> has a crucial role in the lifecycle of a CloudFormation custom resource.
 If the <code>physicalResourceId</code> changes between calls from Cloudformation, for instance in response to an <code>Update</code> event, Cloudformation <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html">treats the resource update as a replacement</a>.</p>
 <h3 id="customising-a-response">Customising a response<a class="headerlink" href="#customising-a-response" title="Permanent link">&para;</a></h3>
 <p>As well as the <code>Response.success(physicalResourceId)</code> and <code>Response.failed(physicalResourceId)</code>, you can customise the <code>Response</code> by using the <code>Response.builder()</code>.
@@ -1156,7 +1158,7 @@ Therefore, after the custom resource update completed or failed, there may be ot
   <small>
     
       Last update:
-      2023-05-17
+      2023-06-05
     
   </small>
 </div>

@@ -12,23 +12,25 @@
         <meta name="author" content="Amazon Web Services">
       
       
+        <link rel="canonical" href="https://docs.powertools.aws.dev/lambda-java/utilities/serialization/">
+      
       
         <link rel="prev" href="../custom_resources/">
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Serialization Utilities - AWS Lambda Powertools for Java</title>
+        <title>Serialization Utilities - Powertools for AWS Lambda (Java)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -91,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -103,7 +105,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Java
+            Powertools for AWS Lambda (Java)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -214,12 +216,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Java" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Java)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Java
+    Powertools for AWS Lambda (Java)
   </label>
   
     <div class="md-nav__source">
@@ -1254,7 +1256,7 @@
 <h2 id="jmespath-functions">JMESPath functions<a class="headerlink" href="#jmespath-functions" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><a href="https://jmespath.org/" target="_blank">JMESPath</a> is a query language for JSON used by AWS CLI and AWS Lambda Powertools for Java to get a specific part of a json.</p>
+<p><a href="https://jmespath.org/" target="_blank">JMESPath</a> is a query language for JSON used by AWS CLI and Powertools for AWS Lambda (Java) to get a specific part of a json.</p>
 </div>
 <h3 id="key-features_1">Key features<a class="headerlink" href="#key-features_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1263,9 +1265,9 @@
 </ul>
 <h3 id="getting-started_1">Getting started<a class="headerlink" href="#getting-started_1" title="Permanent link">&para;</a></h3>
 <p>You might have events that contain encoded JSON payloads as string, base64, or even in compressed format. It is a common use case to decode and extract them partially or fully as part of your Lambda function invocation.</p>
-<p>You will generally use this in combination with other Lambda Powertools modules (<a href="../validation/">validation</a> and <a href="../idempotency/">idempotency</a>) where you might need to extract a portion of your data before using them.</p>
+<p>You will generally use this in combination with other Powertools for AWS Lambda (Java) modules (<a href="../validation/">validation</a> and <a href="../idempotency/">idempotency</a>) where you might need to extract a portion of your data before using them.</p>
 <h3 id="built-in-functions">Built-in functions<a class="headerlink" href="#built-in-functions" title="Permanent link">&para;</a></h3>
-<p>Powertools provides the following JMESPath Functions to easily deserialize common encoded JSON payloads in Lambda functions:</p>
+<p>Powertools for AWS Lambda (Java) provides the following JMESPath Functions to easily deserialize common encoded JSON payloads in Lambda functions:</p>
 <h4 id="powertools_json-function">powertools_json function<a class="headerlink" href="#powertools_json-function" title="Permanent link">&para;</a></h4>
 <p>Use <code>powertools_json</code> function to decode any JSON string anywhere a JMESPath expression is allowed.</p>
 <p>Below example use this function to load the content from the body of an API Gateway request event as a JSON object and retrieve the id field in it:</p>
@@ -1588,7 +1590,7 @@ to powertools.You can then use it to do your validation or in idempotency module
   <small>
     
       Last update:
-      2023-05-17
+      2023-06-05
     
   </small>
 </div>

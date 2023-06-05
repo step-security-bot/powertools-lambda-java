@@ -6,29 +6,31 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="AWS Lambda Powertools for Java">
+        <meta name="description" content="Powertools for AWS Lambda (Java)">
       
       
         <meta name="author" content="Amazon Web Services">
       
+      
+        <link rel="canonical" href="https://docs.powertools.aws.dev/lambda-java/">
       
       
       
         <link rel="next" href="changelog/">
       
       <link rel="icon" href="media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Homepage - AWS Lambda Powertools for Java</title>
+        <title>Homepage - Powertools for AWS Lambda (Java)</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -91,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="AWS Lambda Powertools for Java" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="." title="Powertools for AWS Lambda (Java)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="media/aws-logo-light.svg" alt="logo">
 
@@ -103,7 +105,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Java
+            Powertools for AWS Lambda (Java)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -214,12 +216,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="AWS Lambda Powertools for Java" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Java" data-md-component="logo">
+    <a href="." title="Powertools for AWS Lambda (Java)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Java)" data-md-component="logo">
       
   <img src="media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Java
+    Powertools for AWS Lambda (Java)
   </label>
   
     <div class="md-nav__source">
@@ -616,15 +618,15 @@
   <h1>Homepage</h1>
 
 <p><img alt="aws provider" src="https://img.shields.io/badge/provider-AWS-orange?logo=amazon-aws&amp;color=ff9900" /> <img alt="Build status" src="https://github.com/awslabs/aws-lambda-powertools-java/actions/workflows/build.yml/badge.svg" /> <img alt="Maven Central" src="https://img.shields.io/maven-central/v/software.amazon.lambda/powertools-parent" /></p>
-<p>Powertools is a suite of utilities for AWS Lambda Functions that makes tracing with AWS X-Ray, structured logging and creating custom metrics asynchronously easier.</p>
+<p>Powertools for AWS Lambda (Java) is a suite of utilities for AWS Lambda Functions that makes tracing with AWS X-Ray, structured logging and creating custom metrics asynchronously easier.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>Powertools is also available for <a href="https://awslabs.github.io/aws-lambda-powertools-python/" target="_blank">Python</a>, <a href="https://awslabs.github.io/aws-lambda-powertools-typescript/" target="_blank">TypeScript</a>, and <a href="https://awslabs.github.io/aws-lambda-powertools-dotnet/" target="_blank">.NET</a></p>
+<p>Powertools for AWS Lambda  is also available for <a href="https://awslabs.github.io/aws-lambda-powertools-python/" target="_blank">Python</a>, <a href="https://awslabs.github.io/aws-lambda-powertools-typescript/" target="_blank">TypeScript</a>, and <a href="https://awslabs.github.io/aws-lambda-powertools-dotnet/" target="_blank">.NET</a></p>
 </details>
 <div class="admonition tip">
 <p class="admonition-title">Looking for a quick run through of the core utilities?</p>
 <p>Check out <a href="https://aws.amazon.com/blogs/opensource/simplifying-serverless-best-practices-with-aws-lambda-powertools-java/">this detailed blog post</a> with a practical example. To dive deeper, 
-the <a href="https://catalog.us-east-1.prod.workshops.aws/workshops/a7011c82-e4af-4a52-80fa-fcd61f1dacd9/en-US/introduction">AWS Lambda Powertools for Java workshop</a> is a great next step.</p>
+the <a href="https://catalog.us-east-1.prod.workshops.aws/workshops/a7011c82-e4af-4a52-80fa-fcd61f1dacd9/en-US/introduction">Powertools for AWS Lambda (Java) workshop</a> is a great next step.</p>
 </div>
 <h2 id="tenets">Tenets<a class="headerlink" href="#tenets" title="Permanent link">&para;</a></h2>
 <p>This project separates core utilities that will be available in other runtimes vs general utilities that might not be available across all runtimes.</p>
@@ -637,13 +639,13 @@ the <a href="https://catalog.us-east-1.prod.workshops.aws/workshops/a7011c82-e4a
 <li><strong>Progressive</strong> -  Utilities are designed to be incrementally adoptable for customers at any stage of their Serverless journey. They follow language idioms and their community’s common practices.</li>
 </ul>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
-<p>Powertools dependencies are available in Maven Central. You can use your favourite dependency management tool to install it</p>
+<p>Powertools for AWS Lambda (Java) dependencies are available in Maven Central. You can use your favourite dependency management tool to install it</p>
 <ul>
 <li><a href="https://maven.apache.org/">Maven</a></li>
 <li><a href="https://gradle.org">Gradle</a></li>
 </ul>
 <p><strong>Quick hello world examples using SAM CLI</strong></p>
-<p>You can use <a href="https://aws.amazon.com/serverless/sam/">SAM</a> to quickly setup a serverless project including AWS Lambda Powertools for Java.</p>
+<p>You can use <a href="https://aws.amazon.com/serverless/sam/">SAM</a> to quickly setup a serverless project including Powertools for AWS Lambda (Java).</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>sam<span class="w"> </span>init<span class="w"> </span>--location<span class="w"> </span>gh:aws-samples/cookiecutter-aws-sam-powertools-java
 </code></pre></div></td></tr></table></div>
 <p>For more information about the project and available options refer to this <a href="https://github.com/aws-samples/cookiecutter-aws-sam-powertools-java/blob/main/README.md">repository</a></p>
@@ -857,7 +859,7 @@ the <a href="https://catalog.us-east-1.prod.workshops.aws/workshops/a7011c82-e4a
   <small>
     
       Last update:
-      2023-05-17
+      2023-06-05
     
   </small>
 </div>
