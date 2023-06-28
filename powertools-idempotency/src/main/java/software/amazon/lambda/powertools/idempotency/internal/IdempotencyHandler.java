@@ -83,6 +83,7 @@ public class IdempotencyHandler {
             // already exists. If it succeeds, there's no need to call getRecord.
             persistenceStore.saveInProgress(data, Instant.now(), getRemainingTimeInMillis());
         } catch (IdempotencyItemAlreadyExistsException iaee) {
+            LOG.debug("Item already exists in idempotency store; trying to retrieve existing value");
             DataRecord record = getIdempotencyRecord();
             if (record != null) {
                 return handleForStatus(record);
